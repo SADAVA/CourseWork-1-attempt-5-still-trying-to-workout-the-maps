@@ -211,11 +211,52 @@ subgroup* Data::InsertSubgroup(char s, int i, std::initializer_list<Item*> items
 
 group* Data::InsertGroup(char c, std::initializer_list<int> subgroups, std::initializer_list<std::initializer_list<Item*>> items)
 {
-	return nullptr;
+	if (structure_[c] != nullptr)
+		return nullptr;
+
+	structure_[c] = new group;
+
+	auto s = subgroups.begin();
+	auto i = items.begin();
+
+	while (s != subgroups.end())
+	{
+		InsertSubgroup(c, *s, *i);
+		
+		++s;
+		++i;
+	}
+
+	return structure_[c];
 }
 
 bool Data::RemoveItem(char c, int i, std::string s)
 {
+	if (structure_[c] == nullptr)
+		return false;
+
+	if ((*structure_[c])[i] == nullptr)
+		return false;
+
+	const auto group = structure_[c];
+	const auto subgroup = (*structure_[c])[i];
+
+	for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
+	{
+		if ((*item)->get_name() == s)
+		{
+			subgroup->remove(*item);
+
+			if (subgroup->empty())
+				structure_[c]->erase(i);
+
+			if (group->empty())
+				structure_.erase(c);
+			
+			return true;
+		}
+	}
+
 	return false;
 }
 

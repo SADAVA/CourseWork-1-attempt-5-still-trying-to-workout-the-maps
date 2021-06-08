@@ -93,7 +93,11 @@ std::string random_name()
 	std::uniform_int_distribution<> distr(0, get_names()->size());
 
 	int index = distr(eng);
-	std::string result = *std::next(get_names()->begin(), index);
+	auto it = get_names()->begin();
+
+	std::advance(it, index);
+	
+	std::string result = *it;
 	
 	return result;
 }

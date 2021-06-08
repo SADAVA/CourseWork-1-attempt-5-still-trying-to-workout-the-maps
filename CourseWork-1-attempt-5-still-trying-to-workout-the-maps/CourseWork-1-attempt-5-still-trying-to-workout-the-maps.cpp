@@ -478,7 +478,13 @@ int main()
         std::cout << test_log_prefix << "Selected subgroup: " << selected_subgroup_10_a << std::endl;
 
         std::cout << test_log_prefix << "Creating a list with 5 new items." << std::endl;
-        std::initializer_list<Item*> items = {new Item, new Item, new Item, new Item, new Item};
+        std::initializer_list<Item*> items = {
+            new Item(selected_group_10_a, selected_subgroup_10_a, "10-a-0"),
+            new Item(selected_group_10_a, selected_subgroup_10_a, "10-a-1"),
+            new Item(selected_group_10_a, selected_subgroup_10_a, "10-a-2"),
+            new Item(selected_group_10_a, selected_subgroup_10_a, "10-a-3"),
+            new Item(selected_group_10_a, selected_subgroup_10_a, "10-a-4"),
+        };
 
         std::cout << test_log_prefix << "Inserting the {10.a} list." << std::endl;
         data_7->InsertSubgroup(selected_group_10_a, selected_subgroup_10_a, items);
@@ -503,7 +509,7 @@ int main()
 
 	if (selected_group_10_b == NULL)
 	{
-        std::cout << error_log_prefix << "Could not select, selected_group_10_a is NULL!" << std::endl;
+        std::cout << error_log_prefix << "Could not select, selected_group_10_b is NULL!" << std::endl;
         std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
         std::cout << error_log_prefix << "10.a will be skipped!" << std::endl;
 	}
@@ -513,7 +519,13 @@ int main()
         std::cout << test_log_prefix << "Selected subgroup: " << selected_subgroup_10_b << std::endl;
 
         std::cout << test_log_prefix << "Creating a list with 5 new items." << std::endl;
-        std::initializer_list<Item*> items = { new Item, new Item, new Item, new Item, new Item };
+        std::initializer_list<Item*> items = {
+            new Item(selected_group_10_b, selected_subgroup_10_b, "10-b-0"),
+            new Item(selected_group_10_b, selected_subgroup_10_b, "10-b-1"),
+            new Item(selected_group_10_b, selected_subgroup_10_b, "10-b-2"),
+            new Item(selected_group_10_b, selected_subgroup_10_b, "10-b-3"),
+            new Item(selected_group_10_b, selected_subgroup_10_b, "10-b-4"),
+        };
     	
         data_7->InsertSubgroup(selected_group_10_b, selected_subgroup_10_b, items);
     }
@@ -555,7 +567,13 @@ int main()
 
 
         std::cout << test_log_prefix << "Creating a list with 5 new items." << std::endl;
-        std::initializer_list<Item*> items = { new Item, new Item, new Item, new Item, new Item };
+        std::initializer_list<Item*> items = {
+            new Item(group_key_10_c, subgroup_key_10_c, "10-c-0"),
+            new Item(group_key_10_c, subgroup_key_10_c, "10-c-1"),
+            new Item(group_key_10_c, subgroup_key_10_c, "10-c-2"),
+            new Item(group_key_10_c, subgroup_key_10_c, "10-c-3"),
+            new Item(group_key_10_c, subgroup_key_10_c, "10-c-4"),
+        };
 
         data_7->InsertSubgroup(group_key_10_c, subgroup_key_10_c, items);
     }
@@ -565,9 +583,156 @@ int main()
 
 	std::cout << task_log_prefix << "[10.d] Apply method PrintAll() to check the results." << std::endl;
     data_7->PrintAll();
+
 	
     // --- // --- // --- //
 
+
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[11.] Apply method InsertGroup() if:" << std::endl;
+    std::cout << std::endl;
+
+    std::cout << task_log_prefix << "[11.a] The group is new." << std::endl;
+
+    char selected_group_11_a = NULL;
+
+    for (auto c = 'a'; c < 'z'; c++)
+    {
+        if (data_7->GetGroup(c) != nullptr) continue;
+
+        selected_group_11_a = c;
+
+        break;
+    }
+
+	if (selected_group_11_a == NULL)
+	{
+        std::cout << error_log_prefix << "Failed to find selected_group_11_a!" << std::endl;
+	}
+    else
+    {
+        std::cout << test_log_prefix << "Selected group is: " << selected_group_11_a << std::endl;
+    	
+        std::initializer_list<int> subgroups = { 0, 1, 2 };
+        std::initializer_list<std::initializer_list<Item*>> items = {
+            { new Item(selected_group_11_a, 0, "11-a-0-0"), new Item(selected_group_11_a, 0, "11-a-0-1"), new Item(selected_group_11_a, 0, "11-a-0-2") },
+            { new Item(selected_group_11_a, 0, "11-a-1-0"), new Item(selected_group_11_a, 0, "11-a-1-1"), new Item(selected_group_11_a, 0, "11-a-1-2") },
+            { new Item(selected_group_11_a, 0, "11-a-2-0"), new Item(selected_group_11_a, 0, "11-a-2-1"), new Item(selected_group_11_a, 0, "11-a-2-2") },
+
+        };
+    	
+        if (data_7->InsertGroup(selected_group_11_a, subgroups, items) != nullptr)
+            std::cout << test_log_prefix << "Result: Inserted!" << std::endl;
+        else
+            std::cout << test_log_prefix << "Result: did not!" << std::endl;
+    }
+	
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[11.b] The group exists." << std::endl;
+
+    char selected_group_11_b = NULL;
+
+    for (auto c = 'a'; c < 'z'; c++)
+    {
+        if (data_7->GetGroup(c) == nullptr) continue;
+
+        selected_group_11_b = c;
+
+        break;
+    }
+
+    if (selected_group_11_b == NULL)
+    {
+        std::cout << error_log_prefix << "Failed to find selected_group_11_b!" << std::endl;
+    }
+    else
+    {
+        std::cout << test_log_prefix << "Selected group is: " << selected_group_11_b << std::endl;
+    	
+        std::initializer_list<int> subgroups = { 0, 1, 2 };
+        std::initializer_list<std::initializer_list<Item*>> items = {
+            { new Item(selected_group_11_b, 0, "11-b-0-0"), new Item(selected_group_11_b, 0, "11-b-0-1"), new Item(selected_group_11_b, 0, "11-b-0-2") },
+            { new Item(selected_group_11_b, 0, "11-b-1-0"), new Item(selected_group_11_b, 0, "11-b-1-1"), new Item(selected_group_11_b, 0, "11-b-1-2") },
+            { new Item(selected_group_11_b, 0, "11-b-2-0"), new Item(selected_group_11_b, 0, "11-b-2-1"), new Item(selected_group_11_b, 0, "11-b-2-2") },
+        };
+
+        if (data_7->InsertGroup(selected_group_11_b, subgroups, items) != nullptr)
+	        std::cout << test_log_prefix << "Result: Inserted!" << std::endl;
+        else
+			std::cout << test_log_prefix << "Result: did not!" << std::endl;
+    }
+
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[11.c] Apply method PrintAll() to check the results." << std::endl;
+    data_7->PrintAll();
+
+
+    // --- // --- // --- //
+
+
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[12.] Create object containing 100 items and apply method PrintAll()." << std::endl;
+    std::cout << std::endl;
+
+    std::cout << test_log_prefix << "Creating new Data with 100 new items." << std::endl;
+    auto data_12 = new Data(100);
+
+    std::cout << test_log_prefix << "Calling printAll" << std::endl;
+    data_12->PrintAll();
+
+
+    // --- // --- // --- //
+
+
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[13.] Apply method RemoveItem() so that:" << std::endl;
+    std::cout << std::endl;
+
+
+    std::cout << task_log_prefix << "[13.a] After removing the subgroup does not disappear." << std::endl;
+
+	// What means we need to find a subgroup with size() > 1
+    char searched_group_13_a = NULL;
+    int searched_subgroup_13_a = NULL;
+
+    for (auto group = data_7->structure_.begin(); group != data_7->structure_.end(); ++group)
+    {
+        if (group->second->empty()) continue;
+
+        for (auto subgroup = group->second->begin(); subgroup != group->second->end(); ++subgroup)
+        {
+            if (subgroup->second->size() < 2) continue;
+
+            searched_group_13_a = group->first;
+            searched_subgroup_13_a = subgroup->first;
+
+            break;
+        }
+
+        if (searched_group_13_a != NULL && searched_subgroup_13_a != NULL)
+            break;
+    }
+
+    if (group_key_10_c == NULL || subgroup_key_10_c == NULL)
+    {
+        std::cout << error_log_prefix << "Either group_key_10_c or subgroup_key_10_c is NULL!" << std::endl;
+        std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
+        std::cout << error_log_prefix << "9.b will be skipped!" << std::endl;
+    }
+    else
+    {
+        std::cout << test_log_prefix << "Selected group: " << group_key_10_c << std::endl;
+        std::cout << test_log_prefix << "Selected subgroup: " << subgroup_key_10_c << std::endl;
+
+	
+    // --- // --- // --- //
+
+
+
+
+
+	
 	
 	// Footer
     std::cout << std::endl << std::endl << std::endl;
