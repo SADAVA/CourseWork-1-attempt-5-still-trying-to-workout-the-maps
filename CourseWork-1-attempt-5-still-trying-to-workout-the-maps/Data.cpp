@@ -74,6 +74,8 @@ void Data::PrintSubgroup(subgroup* subgroup)
 
 void Data::PrintItem(Item* item)
 {
+	if (item == nullptr) return;
+	
 	std::cout << *item << std::endl;
 }
 
@@ -81,7 +83,7 @@ group* Data::GetGroup(char c)
 {
 	auto search = structure_.find(c);
 
-	if (search->second == nullptr)
+	if (search == structure_.end())
 		return nullptr;
 	else
 		return search->second;
@@ -98,7 +100,7 @@ subgroup* Data::GetSubgroup(group* group, int i)
 
 	const auto search = group->find(i);
 
-	if (search->second == nullptr)
+	if (search == group->end())
 		return nullptr;
 	else
 		return search->second;
@@ -116,6 +118,8 @@ void Data::PrintSubgroupByNames(group* group, int i)
 
 void Data::PrintSubgroupByNames(subgroup* subgroup_)
 {
+	if (subgroup_ == nullptr) return;
+
 	subgroup* copy(subgroup_);
 
 	copy->sort(CompareNames);
@@ -135,6 +139,8 @@ void Data::PrintSubgroupByDates(group* group, int i)
 
 void Data::PrintSubgroupByDates(subgroup* subgroup_)
 {
+	if (subgroup_ == nullptr) return;
+	
 	subgroup* copy(subgroup_);
 
 	copy->sort(CompareDates);
@@ -189,7 +195,18 @@ Item* Data::InsertItem(char c, int i, std::string s, Date d)
 
 subgroup* Data::InsertSubgroup(char s, int i, std::initializer_list<Item*> items)
 {
-	return nullptr;
+	// Subgroup already exists.
+	if (structure_[s] != nullptr)
+		if ((*structure_[s])[i] != nullptr)
+			return nullptr;
+
+	// Create missing group
+	if (structure_[s] == nullptr)
+	{
+		structure_[s] = new group;
+	}
+
+	return (*structure_[s])[i] = new subgroup(items);
 }
 
 group* Data::InsertGroup(char c, std::initializer_list<int> subgroups, std::initializer_list<std::initializer_list<Item*>> items)
@@ -226,15 +243,13 @@ int Data::CountItems()
 
 int Data::CountGroupItems(char c)
 {
-	auto group = GetGroup(c);
-
-	if (group == nullptr)
-		return 0;
-	else return CountGroupItems(group);
+	return CountGroupItems(GetGroup(c));
 }
 
 int Data::CountGroupItems(group* group)
 {
+	if (group == nullptr) return 0;
+	
 	int result = 0;
 
 	for (auto subgroup = group->begin(); subgroup != group->end(); ++subgroup)
@@ -247,24 +262,18 @@ int Data::CountGroupItems(group* group)
 
 int Data::CountSubgroupItems(char c, int i)
 {
-	auto group = GetGroup(c);
-
-	if (group == nullptr)
-		return 0;
-	else return CountSubgroupItems(group, i);
+	return CountSubgroupItems(GetGroup(c), i);
 }
 
 int Data::CountSubgroupItems(group* group, int i)
 {
-	auto subgroup = GetSubgroup(group, i);
-
-	if (subgroup == nullptr)
-		return 0;
-	else return CountSubgroupItems(subgroup);
+	return CountSubgroupItems(GetSubgroup(group, i));
 }
 
 int Data::CountSubgroupItems(subgroup* subgroup)
 {
+	if (subgroup == nullptr) return 0;
+	
 	int result = 0;
 
 	for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
@@ -277,6 +286,8 @@ int Data::CountSubgroupItems(subgroup* subgroup)
 
 Item* Data::InsertItem(Item* item)
 {
+	if (item == nullptr) return nullptr;
+	
 	if (structure_[item->get_group()] == nullptr)
 		structure_[item->get_group()] = new group;
 

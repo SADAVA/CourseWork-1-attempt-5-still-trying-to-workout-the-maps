@@ -31,6 +31,14 @@ Item::Item(const Item& item)
 	Timestamp = item.Timestamp;
 }
 
+Item::Item(char c, std::string s)
+{
+	Group = c;
+	Subgroup = random_subgroup();
+	Name = s;
+	Timestamp = random_timestamp();
+}
+
 Item::Item(char c, int i, std::string s)
 {
 	Group = c;

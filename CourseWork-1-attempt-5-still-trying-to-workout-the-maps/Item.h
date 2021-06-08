@@ -16,6 +16,7 @@ public:
 	Item(); // Fills the four fields above with preudo-random values
 	Item(char, int, std::string, Date);
 	Item(char, int, std::string);
+	Item(char, std::string);
 	Item(const Item&); // copy constructor
 	~Item();
 

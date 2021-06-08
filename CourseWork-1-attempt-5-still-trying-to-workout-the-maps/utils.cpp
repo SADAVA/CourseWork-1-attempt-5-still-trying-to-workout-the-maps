@@ -86,6 +86,8 @@ int random_subgroup()
 
 std::string random_name()
 {
+	if (get_names() == nullptr) return "Nope";
+	
 	std::random_device rd;
 	std::mt19937 eng(rd());
 	std::uniform_int_distribution<> distr(0, get_names()->size());
@@ -104,3 +106,5 @@ Date random_timestamp()
 
 	return Date::CreateRandomDate(*from, *until);
 }
+
+
