@@ -38,8 +38,21 @@ public:
 	int CountItems();
 	Item* InsertItem(Item* item);
 	int CountGroupItems(group* group);
-	int CountSubgroupItems(char c, int i);
 	int CountSubgroupItems(group* group, int i);
 	int CountSubgroupItems(subgroup* subgroup);
 	subgroup* GetSubgroup(group* group, int i);
+	void PrintGroup(group* group);
+	void PrintSubgroup(char c, int i);
+	void PrintSubgroup(group* group, int i);
+	void PrintSubgroup(subgroup* subgroup);
+	void PrintItem(Item* item);
+	Item* GetItem(group* group, int i, std::string s);
+	Item* GetItem(subgroup* subgroup, std::string s);
+	void PrintSubgroupByNames(group* group, int i);
+	void PrintSubgroupByNames(subgroup* subgroup);
+	void PrintSubgroupByDates(group* group, int i);
+	void PrintSubgroupByDates(subgroup* subgroup_);
+
+	static bool CompareNames(Item* first, Item* second);
+	static bool CompareDates(Item* first, Item* second);
 };

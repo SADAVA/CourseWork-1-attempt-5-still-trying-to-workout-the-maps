@@ -31,6 +31,14 @@ Item::Item(const Item& item)
 	Timestamp = item.Timestamp;
 }
 
+Item::Item(char c, int i, std::string s)
+{
+	Group = c;
+	Subgroup = i;
+	Name = s;
+	Timestamp = random_timestamp();
+}
+
 // No pointers, nothing to delete.
 Item::~Item() = default;
 

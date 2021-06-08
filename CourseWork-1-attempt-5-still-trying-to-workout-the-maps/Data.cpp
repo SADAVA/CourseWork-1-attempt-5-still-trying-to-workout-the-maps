@@ -29,32 +29,52 @@ void Data::PrintAll()
 		              std::setw(11) << "Timestamp" <<
 		              std::endl;
 
-	// It is not spagetti, it is pasta!
-	int difficult_problems_require_hard_measures_hard_coded_console_trimmer = 0;
-	
 	for (auto group = structure_.begin(); group != structure_.end(); ++group)
 	{
-		for (auto subgroup = group->second->begin(); subgroup != group->second->end(); ++subgroup)
-		{
-			for (auto item = subgroup->second->begin(); item != subgroup->second->end(); ++item)
-			{
-				std::cout << **item << std::endl;
-
-				++difficult_problems_require_hard_measures_hard_coded_console_trimmer;
-
-				if (difficult_problems_require_hard_measures_hard_coded_console_trimmer > 20)
-				{
-					std::cout << " *** Output was trimmed *** " << std::endl;
-					return;
-				}
-			}
-		}
+		PrintGroup(group->second);
 	}
 }
 
 void Data::PrintGroup(char c)
 {
-	//
+	PrintGroup(GetGroup(c));
+}
+
+void Data::PrintGroup(group* group)
+{
+	if (group == nullptr) return;
+
+	for (auto subgroup = group->begin(); subgroup != group->end(); ++subgroup)
+	{
+		PrintSubgroup(subgroup->second);
+	}
+}
+
+void Data::PrintSubgroup(char c, int i)
+{
+	PrintSubgroup(GetGroup(c), i);
+}
+
+void Data::PrintSubgroup(group* group, int i)
+{
+	if (group == nullptr) return;
+
+	PrintSubgroup(GetSubgroup(group, i));
+}
+
+void Data::PrintSubgroup(subgroup* subgroup)
+{
+	if (subgroup == nullptr) return;
+
+	for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
+	{
+		PrintItem(*item);
+	}
+}
+
+void Data::PrintItem(Item* item)
+{
+	std::cout << *item << std::endl;
 }
 
 group* Data::GetGroup(char c)
@@ -69,38 +89,102 @@ group* Data::GetGroup(char c)
 
 subgroup* Data::GetSubgroup(char c, int i)
 {
-	return nullptr;
+	return GetSubgroup(GetGroup(c), i);
 }
 
 subgroup* Data::GetSubgroup(group* group, int i)
 {
-	return nullptr;
+	if (group == nullptr) return nullptr;
+
+	const auto search = group->find(i);
+
+	if (search->second == nullptr)
+		return nullptr;
+	else
+		return search->second;
 }
 
 void Data::PrintSubgroupByNames(char c, int i)
 {
-	//
+	PrintSubgroupByNames(GetGroup(c), i);
+}
+
+void Data::PrintSubgroupByNames(group* group, int i)
+{
+	PrintSubgroupByNames(GetSubgroup(group, i));
+}
+
+void Data::PrintSubgroupByNames(subgroup* subgroup_)
+{
+	subgroup* copy(subgroup_);
+
+	copy->sort(CompareNames);
+
+	PrintSubgroup(copy);
 }
 
 void Data::PrintSubgroupByDates(char c, int i)
 {
-	//
+	PrintSubgroupByDates(GetGroup(c), i);
 }
 
+void Data::PrintSubgroupByDates(group* group, int i)
+{
+	PrintSubgroupByDates(GetSubgroup(group, i));
+}
+
+void Data::PrintSubgroupByDates(subgroup* subgroup_)
+{
+	subgroup* copy(subgroup_);
+
+	copy->sort(CompareDates);
+
+	PrintSubgroup(copy);
+}
+
+bool Data::CompareNames(Item* first, Item* second)
+{
+	return first->get_name() == second->get_name();
+}
+
+bool Data::CompareDates(Item* first, Item* second)
+{
+	return first->get_timestamp() == second->get_timestamp();
+}
 
 Item* Data::GetItem(char c, int i, std::string s)
 {
+	return GetItem(GetGroup(c), i, s);
+}
+
+Item* Data::GetItem(group* group, int i, std::string s)
+{
+	if (group == nullptr) return nullptr;
+	
+	return GetItem(GetSubgroup(group, i), s);
+}
+
+Item* Data::GetItem(subgroup* subgroup, std::string s)
+{
+	if (subgroup == nullptr) return nullptr;
+
+	for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
+	{
+		if ((*item)->get_name() == s)
+			return *item;
+	}
+
 	return nullptr;
 }
 
 void Data::PrintItem(char c, int i, std::string s)
 {
-	//
+	PrintItem(GetItem(c, i, s));
 }
 
 Item* Data::InsertItem(char c, int i, std::string s, Date d)
 {
-	return nullptr;
+	return InsertItem(new Item(c, i, s));
 }
 
 subgroup* Data::InsertSubgroup(char s, int i, std::initializer_list<Item*> items)
@@ -127,8 +211,6 @@ bool Data::RemoveGroup(char c)
 {
 	return false;
 }
-
-// Added
 
 int Data::CountItems()
 {

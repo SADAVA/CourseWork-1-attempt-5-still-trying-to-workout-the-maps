@@ -92,7 +92,7 @@ std::string random_name()
 
 	int index = distr(eng);
 	
-	return *std::next(get_names()->begin(), index);
+	return *std::next(get_names()->begin(), 1);
 }
 
 Date random_timestamp()
