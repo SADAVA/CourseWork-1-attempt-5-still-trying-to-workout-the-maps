@@ -91,8 +91,9 @@ std::string random_name()
 	std::uniform_int_distribution<> distr(0, get_names()->size());
 
 	int index = distr(eng);
+	std::string result = *std::next(get_names()->begin(), index);
 	
-	return *std::next(get_names()->begin(), 1);
+	return result;
 }
 
 Date random_timestamp()

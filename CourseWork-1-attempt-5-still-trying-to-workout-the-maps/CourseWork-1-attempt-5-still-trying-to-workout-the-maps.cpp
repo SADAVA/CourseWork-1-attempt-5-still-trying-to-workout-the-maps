@@ -112,14 +112,73 @@ int main()
     }
 
     std::cout << test_log_prefix << "Calling: PrintSubgroupByNames(selected_subgroup_key_3);" << std::endl;
-    data_1->PrintSubgroupByNames(selected_group_key_2, selected_subgroup_key_3);
+    data_1->PrintSubgroupByNames(selected_group_2, selected_subgroup_key_3);
 
     std::cout << test_log_prefix << "Calling: PrintSubgroupByDates(selected_subgroup_key_3);" << std::endl;
-    data_1->PrintSubgroupByDates(selected_group_key_2, selected_subgroup_key_3);
-	
+    data_1->PrintSubgroupByDates(selected_group_2, selected_subgroup_key_3);
 
-	// --- // --- // --- //
 
+    // --- // --- // --- //
+
+
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[4.] From the selected group select a subgroup containing only one item." << std::endl;
+    std::cout << task_log_prefix << "Apply methods PrintSubgroupByNames(), PrintSubgroupByDates() and CountSubgroupItems()" << std::endl;
+    std::cout << task_log_prefix << "for the selected subgroup." << std::endl;
+    std::cout << std::endl;
+
+    int selected_subgroup_key_4 = NULL;
+
+    if (selected_group_2 != nullptr) {
+        for (auto subgroup = selected_group_2->begin(); subgroup != selected_group_2->end(); ++subgroup)
+        {
+            if (subgroup->second->size() != 1) continue;
+
+            selected_subgroup_key_4 = subgroup->first;
+
+            break;
+        }
+    }
+    else std::cout << task_log_prefix << "Could not select a subgroup because selected_group_2 is nullptr." << std::endl;
+
+    if (selected_subgroup_key_4 == NULL)
+    {
+        selected_subgroup_key_4 = 1;
+        std::cout << test_log_prefix << "There were no subgroup selected, that is strange, but... whatever, let our selected subgroup just be: " << selected_subgroup_key_3 << std::endl;
+    }
+    else {
+        std::cout << test_log_prefix << "The selected selected_subgroup_key_4 is: " << selected_subgroup_key_4 << std::endl;
+    }
+
+    std::cout << test_log_prefix << "Calling: PrintSubgroupByNames(selected_subgroup_key_4);" << std::endl;
+    data_1->PrintSubgroupByNames(selected_group_2, selected_subgroup_key_4);
+
+    std::cout << test_log_prefix << "Calling: PrintSubgroupByDates(selected_subgroup_key_4);" << std::endl;
+    data_1->PrintSubgroupByDates(selected_group_2, selected_subgroup_key_4);
+
+    std::cout << test_log_prefix << "Calling: CountGroupItems(selected_subgroup_key_4);" << std::endl;
+    std::cout << test_log_prefix << "Result: " << data_1->CountSubgroupItems(selected_group_2, selected_subgroup_key_4) << std::endl;
+
+
+    // --- // --- // --- //
+
+
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[5.] Apply methods PrintSubgroupByNames(), PrintSubgroupByDates() and CountSubgroupItems()" << std::endl;
+    std::cout << task_log_prefix << "for a non - existing subgroup." << std::endl;
+    std::cout << std::endl;
+
+    int non_existant_subgroup_key_5 = 99;
+
+
+    std::cout << test_log_prefix << "Calling: PrintSubgroupByNames(non_existant_subgroup_key_5);" << std::endl;
+    data_1->PrintSubgroupByNames(selected_group_2, non_existant_subgroup_key_5);
+
+    std::cout << test_log_prefix << "Calling: PrintSubgroupByDates(non_existant_subgroup_key_5);" << std::endl;
+    data_1->PrintSubgroupByDates(selected_group_2, non_existant_subgroup_key_5);
+
+    std::cout << test_log_prefix << "Calling: CountGroupItems(non_existant_subgroup_key_5);" << std::endl;
+    std::cout << test_log_prefix << "Result: " << data_1->CountSubgroupItems(selected_group_2, non_existant_subgroup_key_5) << std::endl;
 	
 	// Footer
     std::cout << std::endl << std::endl << std::endl;

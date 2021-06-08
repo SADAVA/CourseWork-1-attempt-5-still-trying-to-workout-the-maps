@@ -144,12 +144,12 @@ void Data::PrintSubgroupByDates(subgroup* subgroup_)
 
 bool Data::CompareNames(Item* first, Item* second)
 {
-	return first->get_name() == second->get_name();
+	return first->get_name() < second->get_name();
 }
 
 bool Data::CompareDates(Item* first, Item* second)
 {
-	return first->get_timestamp() == second->get_timestamp();
+	return first->get_timestamp() < second->get_timestamp();
 }
 
 Item* Data::GetItem(char c, int i, std::string s)
