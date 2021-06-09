@@ -268,16 +268,6 @@ bool Data::RemoveSubgroup(char c, int i)
 	if ((*structure_[c]).count(i) == 0)
 		return false;
 
-	const auto subgroup = (*structure_[c])[i];
-
-	if (!subgroup->empty())
-	{
-		for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
-		{
-			subgroup->remove(*item);
-		}
-	}
-
 	structure_[c]->erase(i);
 
 	return true;
@@ -287,14 +277,6 @@ bool Data::RemoveGroup(char c)
 {
 	if (structure_.count(c) == 0)
 		return false;
-
-	if (!structure_[c]->empty())
-	{
-		for (auto subgroup = structure_[c]->begin(); subgroup != structure_[c]->end(); ++subgroup)
-		{
-			RemoveSubgroup(c, subgroup->first);
-		}
-	}
 
 	structure_.erase(c);
 
