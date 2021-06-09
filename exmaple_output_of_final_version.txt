@@ -1,0 +1,1096 @@
+
+
+
+[---TASK---] [1.] Create object containing 300 items. Use methods PrintAll()
+[---TASK---] and CountItems() to check the created object.
+
+[TEST] Creating a new `Data` object with items_count: 300
+[TEST] Calling: data_1->PrintAll();
+Name                       Group Subgroup Timestamp  
+Chestnut-naped Francolin   a     1        14/ 3/2021
+Songar Tit                 a     3        12/ 4/2021
+Falcated Duck              a     3        15/ 3/2021
+Twite                      a     4        14/10/2021
+Shoveler                   a     4         9/ 4/2021
+Plain Sand Martin          a     5         6/ 5/2021
+Quail                      a     8         3/10/2021
+Blackpoll Warbler          a     9        26/11/2021
+Masked Shrike              a     9        27/ 5/2021
+Black Redstart             a     9        30/12/2021
+Orange River Francolin     b     1        15/ 3/2021
+White Wagtail              b     3        21/ 9/2021
+Aquatic Warbler            b     4         8/ 9/2021
+Fulvous Whistling Duck     b     5        14/ 4/2021
+American Black Duck        b     7         9/ 3/2021
+Pin-tailed Sandgrouse      c     1         3/ 5/2021
+Little Owl                 c     2        28/ 5/2021
+Rock Pipit                 c     2        23/ 8/2021
+Golden Eagle               c     3         7/ 1/2021
+Dipper                     c     4         7/10/2021
+Caucasian (Black) Grouse   c     5        27/ 1/2021
+Ruddy Duck                 c     5        11/ 5/2021
+Tawny Owl                  c     7        30/12/2021
+Indigo Bunting             c     8        17/ 1/2021
+Dark-eyed Junco            c     8        27/ 5/2021
+White-winged Lark          c     9        29/ 1/2021
+Fox Sparrow                d     2        19/ 4/2021
+Erckel's Francolin         d     3        17/ 2/2021
+Siberian Rubythroat        d     4        14/12/2021
+Semipalmated Sandpiper     d     4        31/ 7/2021
+Brown-headed Cowbird       d     5         9/ 8/2021
+Dalmatian Pelican          d     8        10/ 9/2021
+Dipper                     d     8        19/ 1/2021
+Desert Finch               d     8        10/ 6/2021
+Common Raven               e     0         9/ 7/2021
+Long-tailed Rosefinch      e     0        21/ 7/2021
+Lesser Grey Shrike         e     0        13/ 5/2021
+Freira (Madeira Petrel)    e     1        17/ 6/2021
+Isabelline (Rufous-tailed~ e     1        24/ 6/2021
+Trumpeter Finch            e     4         3/ 5/2021
+Ross's Gull                e     8        31/ 8/2021
+American Robin             e     9        16/ 4/2021
+Iago Sparrow               e     9         4/ 1/2021
+Chestnut-shouldered (Yell~ f     0        23/ 2/2021
+Savi's Warbler             f     2        24/ 5/2021
+Siberian (Mountain) Accen~ f     3        26/ 6/2021
+Chestnut-shouldered (Yell~ f     4         6/ 8/2021
+Willet                     f     4         3/ 2/2021
+Yellow-headed Blackbird    f     5        14/ 9/2021
+Blue-cheeked Bee-eater     f     5        21/11/2021
+Leach's Petrel             f     5        13/12/2021
+Glaucous Gull              f     5        13/10/2021
+Eastern (Rufous-sided) To~ f     5         2/12/2021
+Short-eared Owl            f     7         9/ 3/2021
+Stilt Sandpiper            f     7         2/10/2021
+Collared Flycatcher        f     9        30/ 6/2021
+Pallas's Bunting           g     0        12/ 7/2021
+Black Tern                 g     1         3/10/2021
+Pallas's Sandgrouse        g     1         8/ 6/2021
+Wood Thrush                g     1        20/10/2021
+Wedge-tailed Shearwater    g     2        29/ 9/2021
+Red-rumped Wheatear        g     2        15/ 9/2021
+Guillemot                  g     3        11/ 9/2021
+Purple Gallinule           g     4         3/12/2021
+Orange-cheeked Waxbill     g     4        23/ 7/2021
+Rook                       g     5        19/ 8/2021
+Brent Goose                g     7        27/ 7/2021
+Hoopoe Lark                g     7        12/ 3/2021
+Oystercatcher              g     7        16/12/2021
+Chestnut Bunting           g     7         9/ 4/2021
+Red-backed Shrike          g     8        22/ 2/2021
+Aleutian Tern              g     9         8/ 8/2021
+Red-legged Partridge       g     9         3/10/2021
+Great Tit                  h     0        10/ 4/2021
+Olive-tree Warbler         h     0        23/ 2/2021
+Little (House) Swift       h     1        27/ 2/2021
+Wood Thrush                h     1        27/12/2021
+Bee-eater                  h     1         9/11/2021
+Fan-tailed Raven           h     3        19/12/2021
+Common Bulbul              h     5        18/ 2/2021
+Fan-tailed Warbler (Zitti~ h     6        26/ 1/2021
+Sacred Ibis                h     7         9/ 7/2021
+Penduline Tit              h     7        13/ 9/2021
+Field Sparrow              h     7         2/ 5/2021
+Namaqua Dove               i     0        11/ 4/2021
+Blue Chaffinch (Teydefinc~ i     1        12/11/2021
+Blue-cheeked Bee-eater     i     1        20/ 1/2021
+Grey-cheeked Thrush        i     1         4/ 1/2021
+Stonechat                  i     1        24/ 6/2021
+Dalmatian Pelican          i     1        31/10/2021
+Alpine Accentor            i     2        20/ 6/2021
+Cream-coloured Courser     i     5        22/ 6/2021
+Tawny Eagle                i     6         8/ 9/2021
+Bulwer's Petrel            i     6        10/ 1/2021
+Sabine's Gull              i     8         3/ 3/2021
+Chiffchaff                 i     8        17/ 5/2021
+Swinhoe's Snipe            i     9        28/ 9/2021
+Stonechat                  j     0        22/12/2021
+Common Nighthawk           j     2        19/ 6/2021
+Meinertzhagen's Warbler    j     3        21/ 3/2021
+Lesser Crested Tern        j     3        31/ 5/2021
+Sand Partridge             j     3        21/ 2/2021
+Sandwich Tern              j     3         4/11/2021
+Short-toed Eagle           j     3        12/11/2021
+Common Nighthawk           j     4         2/ 2/2021
+Elegant Tern               j     4        19/ 3/2021
+Long-toed (Trocaz) Pigeon~ j     4         6/ 9/2021
+Spanish Sparrow            j     5         6/ 4/2021
+Songar Tit                 j     7        24/ 5/2021
+Roseate Tern               j     8         6/ 9/2021
+Grey Plover                j     9         4/ 1/2021
+Black-and-White Warbler    k     1        26/ 2/2021
+Chaffinch                  k     1        10/11/2021
+Ruff                       k     1        18/ 7/2021
+Mandarin                   k     1        16/ 5/2021
+Chiffchaff                 k     2        14/ 6/2021
+Bullock's Oriole           k     4        19/ 7/2021
+Tengmalm's (Boreal) Owl    k     4         2/ 2/2021
+Pale Crag Martin           k     5        28/ 4/2021
+Icterine Warbler           k     5        17/ 9/2021
+Savi's Warbler             k     6         8/11/2021
+Lesser Masked Weaver       k     6        22/ 4/2021
+Goliath Heron              k     8         8/ 1/2021
+Dark Chanting Goshawk      k     9        27/10/2021
+Siberian Meadow Bunting    l     0        31/10/2021
+House Sparrow              l     0        16/ 6/2021
+Three-toed Woodpecker      l     1         3/ 8/2021
+Kittiwake                  l     1         9/ 7/2021
+Fieldfare                  l     3        30/ 4/2021
+Woodpigeon                 l     3        12/ 2/2021
+Houbara Bustard            l     3        16/ 6/2021
+Pied Wheatear              l     3        27/ 4/2021
+Streaked Weaver            l     3        24/11/2021
+Siberian (Mountain) Accen~ l     5        15/ 2/2021
+Hoopoe                     l     5        14/ 9/2021
+Brent Goose                l     9        20/ 2/2021
+Cooper's Hawk              m     0        20/ 7/2021
+Desert Wheatear            m     3        20/11/2021
+Red-wattled Plover         m     4        14/ 9/2021
+Red Avadavat               m     4        19/ 6/2021
+Willow Warbler             m     4        27/ 4/2021
+Red-backed Shrike          m     6        10/ 3/2021
+BIack-billed Cuckoo        m     6        24/ 3/2021
+Long-eared Owl             m     7        29/11/2021
+Little Shearwater          m     8        16/ 8/2021
+Sanderling                 m     8        24/ 1/2021
+Stone Curlew (Eurasian Th~ m     8        25/11/2021
+Tree Pipit                 n     0         2/ 7/2021
+Black-tailed Godwit        n     0        24/10/2021
+Greylag Goose              n     1        17/ 6/2021
+Western Reef Heron         n     3        11/ 8/2021
+Wilson's Petrel            n     4        15/ 9/2021
+Syrian Serin               n     5        11/ 3/2021
+American Golden Plover     n     5        19/ 4/2021
+Woodcock                   n     6         2/10/2021
+Yellow Warbler             n     8         2/11/2021
+Least Sandpiper            n     8        29/11/2021
+Pomarine Skua              n     8        26/ 6/2021
+Caucasian (Black) Grouse   o     1        12/ 6/2021
+Little Bustard             o     2         5/10/2021
+Scops Owl                  o     3        15/ 2/2021
+Levant Sparrowhawk         o     4        10/10/2021
+Slavonian (Horned) Grebe   o     5         9/ 8/2021
+African Openbill           o     6        28/ 2/2021
+Knot                       o     7         4/ 3/2021
+Pale Crag Martin           o     9        17/ 9/2021
+Black-footed Albatross     p     0        20/ 7/2021
+Black-footed Albatross     p     2        24/12/2021
+Japanese Grosbeak          p     5        30/ 5/2021
+African Silverbill         p     7        29/ 3/2021
+Fulmar                     p     8        25/ 8/2021
+Arctic Skua                p     8        21/ 2/2021
+Common Sandpiper           q     0        10/12/2021
+House Martin               q     0        27/ 1/2021
+Finsch's Wheatear          q     0        13/ 5/2021
+Ostrich                    q     1        16/10/2021
+Red-fronted Serin          q     1        15/ 4/2021
+Songar Tit                 q     2         8/ 1/2021
+Thekla Lark                q     2        19/ 6/2021
+House Sparrow              q     6        13/ 7/2021
+Slender-billed Curlew      q     6        21/ 8/2021
+Arctic Skua                q     6        14/ 6/2021
+Baillon's Crake            q     6        24/ 1/2021
+Armenian Gull              q     9        17/ 2/2021
+Bearded Tit (Parrotbill)   r     1        24/ 7/2021
+Pied Crow                  r     2        17/ 7/2021
+Arctic Skua                r     2        23/ 5/2021
+Red-breasted Flycatcher    r     3        30/ 3/2021
+Lappet-faced Vulture       r     3         3/ 6/2021
+Greater Yellowlegs         r     5        13/10/2021
+Eider                      r     6        21/ 6/2021
+Secretarybird              r     9        28/ 8/2021
+Common Raven               s     0         4/ 5/2021
+Graceful Warbler (Prinia)~ s     0        20/ 5/2021
+Chukar                     s     1        20/ 4/2021
+White-headed Duck          s     1         1/ 9/2021
+Brown Thrasher             s     2        29/11/2021
+Arabian Bustard            s     2         3/ 3/2021
+Pheasant                   s     4        12/10/2021
+Pheasant                   s     5         3/ 1/2021
+Kori Bustard               s     6         4/ 2/2021
+Middle Spotted Woodpecker~ s     6         2/ 1/2021
+Rock Partridge             s     7         5/ 4/2021
+Gon-gon (Cape Verde Petre~ s     7        24/ 5/2021
+Tufted Duck                s     7         1/ 9/2021
+Eastern Crowned-Warbler    s     7        10/10/2021
+Cerulean Warbler           s     9         8/ 4/2021
+Crowned Sandgrouse         t     1        22/ 8/2021
+Canaries Islands Chat      t     1        19/ 9/2021
+Ochre-breasted (Djibouti)~ t     2        29/ 4/2021
+White-crowned (-tailed) B~ t     2        14/ 2/2021
+Black-and-White Warbler    t     2        14/ 2/2021
+Brambling                  t     3        30/ 7/2021
+Avocet                     t     3         2/10/2021
+Iceland Gull               t     4         3/ 7/2021
+Lammergeier                t     4        20/ 5/2021
+African Marsh Owl          t     4        26/ 5/2021
+Great Crested Grebe        t     5        13/10/2021
+Northern Rough-winged Swa~ t     6        28/10/2021
+Black-and-White Warbler    t     7        19/ 6/2021
+Canary                     t     7         2/ 5/2021
+Chestnut-shouldered (Yell~ t     8        24/11/2021
+Wandering Albatross        t     8         9/11/2021
+Black-browed Albatross     t     9        19/12/2021
+Bewick (Tundra) Swan       u     0        14/ 9/2021
+Black-winged Pratincole    u     0        23/ 1/2021
+Imperial Eagle             u     1         8/10/2021
+Blackpoll Warbler          u     3        28/ 2/2021
+Lesser Spotted Eagle       u     4         6/ 1/2021
+Ring-necked Duck           u     5        14/10/2021
+Yellow-billed Oxpecker     u     6        21/ 3/2021
+Chukar                     u     7        18/ 1/2021
+Moussier's Redstart        u     8        12/ 1/2021
+Glaucous-winged Gull       u     8        27/ 7/2021
+Isabelline (Rufous-tailed~ v     1        11/ 9/2021
+Bridled Tern               v     1        25/ 8/2021
+Rose-throated Tanager      v     1        28/ 5/2021
+Eastern Chiffchaff         v     5        31/ 3/2021
+Hawfinch                   v     6        18/11/2021
+Pintail Snipe              v     7        23/ 9/2021
+Buff-breasted Sandpiper    v     7        19/ 3/2021
+Pallid Harrier             v     7        27/ 3/2021
+Pallas's Rosefinch         v     8         6/ 8/2021
+Ochre-breasted (Djibouti)~ v     8         3/ 2/2021
+Goldcrest                  v     8        16/11/2021
+Black Francolin            v     9        23/ 7/2021
+Storm Petrel               w     0        23/ 8/2021
+Chestnut-bellied Sandgrou~ w     0         2/12/2021
+Griffon Vulture            w     0        26/ 7/2021
+Needle-tailed Swift (Whit~ w     0         4/11/2021
+Red-throated Pipit         w     0        29/ 4/2021
+Squacco Heron              w     2        11/ 2/2021
+Isabelline Wheatear        w     3        25/12/2021
+Ahanta Francolin           w     3        16/ 1/2021
+Brown Shrike               w     3         2/12/2021
+Manx Shearwater            w     3        17/ 3/2021
+Red-necked Stint           w     3        24/12/2021
+Aquatic Warbler            w     5        11/10/2021
+Lesser Redpoll             w     5         6/ 4/2021
+Iberian Chiffchaff         w     5         7/11/2021
+Honey Buzzard              w     6        29/ 9/2021
+Fulvous Babbler (Chattere~ w     6        17/ 3/2021
+Squacco Heron              w     8         5/ 8/2021
+Pied Crow                  w     9        27/ 9/2021
+Red-flanked Bluetail       w     9        25/12/2021
+Lesser Yellowlegs          w     9        19/11/2021
+Iago Sparrow               w     9        16/10/2021
+Marmora's Warbler          x     0        28/ 7/2021
+Long-eared Owl             x     1        30/11/2021
+Gannet                     x     1         2/12/2021
+Corsican Nuthatch          x     1         2/ 1/2021
+Fulvous Babbler (Chattere~ x     4         9/ 1/2021
+Lappet-faced Vulture       x     5         3/11/2021
+Orange River Francolin     x     6         4/ 9/2021
+Siberian Meadow Bunting    x     6         6/ 3/2021
+Spotted Sandpiper          x     6         9/10/2021
+Louisiana Waterthrush      x     6         4/10/2021
+Veery                      x     6        25/12/2021
+Senegal Coucal             x     7        18/11/2021
+Eastern (Rufous-sided) To~ y     3        12/ 5/2021
+Siskin                     y     3        12/ 6/2021
+Roseate Tern               y     4        31/ 5/2021
+Long-tailed (Reed) Cormor~ y     6        26/ 9/2021
+Dead Sea Sparrow           y     7        21/ 3/2021
+Goldeneye                  y     7        20/ 9/2021
+Snow Bunting               y     7        20/ 1/2021
+(Rufous) Red-tailed Wheat~ y     8        23/ 2/2021
+Common Waxbill             y     8        29/ 6/2021
+Wandering Albatross        y     9        18/ 4/2021
+Iceland Gull               y     9        21/ 7/2021
+Southern Giant Petrel      z     0        31/12/2021
+Forest Francolin           z     0        20/ 4/2021
+Dunlin                     z     2        14/12/2021
+Black-throated Green Warb~ z     4        13/ 7/2021
+Little Curlew              z     4        20/ 4/2021
+Cameroon Francolin         z     6        11/ 1/2021
+Buzzard                    z     6        28/11/2021
+Willet                     z     6        28/ 4/2021
+Red-winged Francolin       z     7        20/ 9/2021
+Mandarin                   z     8         1/ 5/2021
+[TEST] CountItems() result: 300, whereas expected count is: 300
+
+
+
+[---TASK---] [2.] Select a group.Condition: there must be at least one subgroup
+[---TASK---] containing at least two items.
+[---TASK---] Apply methods PrintGroup() and CountGroupItems() for the selected group.
+
+[TEST] The selected selected_group_key_2 is: a
+[TEST] Calling: CountGroupItems(selected_group_key_2);
+[TEST] Result: 10
+[TEST] Calling: PrintGroup(selected_group_key_2);
+Chestnut-naped Francolin   a     1        14/ 3/2021
+Songar Tit                 a     3        12/ 4/2021
+Falcated Duck              a     3        15/ 3/2021
+Twite                      a     4        14/10/2021
+Shoveler                   a     4         9/ 4/2021
+Plain Sand Martin          a     5         6/ 5/2021
+Quail                      a     8         3/10/2021
+Blackpoll Warbler          a     9        26/11/2021
+Masked Shrike              a     9        27/ 5/2021
+Black Redstart             a     9        30/12/2021
+
+
+
+[---TASK---] [3.] From the selected group select a subgroup containing at least two items.
+[---TASK---] Apply methods PrintSubgroupByNames(), PrintSubgroupByDates()
+[---TASK---] and CountSubgroupItems() for the selected subgroup.
+
+[TEST] The selected selected_subgroup_key_3 is: 3
+[TEST] Calling: PrintSubgroupByNames(selected_subgroup_key_3);
+Falcated Duck              a     3        15/ 3/2021
+Songar Tit                 a     3        12/ 4/2021
+[TEST] Calling: PrintSubgroupByDates(selected_subgroup_key_3);
+Falcated Duck              a     3        15/ 3/2021
+Songar Tit                 a     3        12/ 4/2021
+
+
+
+[---TASK---] [4.] From the selected group select a subgroup containing only one item.
+[---TASK---] Apply methods PrintSubgroupByNames(), PrintSubgroupByDates() and CountSubgroupItems()
+[---TASK---] for the selected subgroup.
+
+[TEST] The selected selected_subgroup_key_4 is: 1
+[TEST] Calling: PrintSubgroupByNames(selected_subgroup_key_4);
+Chestnut-naped Francolin   a     1        14/ 3/2021
+[TEST] Calling: PrintSubgroupByDates(selected_subgroup_key_4);
+Chestnut-naped Francolin   a     1        14/ 3/2021
+[TEST] Calling: CountGroupItems(selected_subgroup_key_4);
+[TEST] Result: 1
+
+
+
+[---TASK---] [5.] Apply methods PrintSubgroupByNames(), PrintSubgroupByDates() and CountSubgroupItems()
+[---TASK---] for a non - existing subgroup.
+
+[TEST] Calling: PrintSubgroupByNames(non_existant_subgroup_key_5);
+[TEST] Calling: PrintSubgroupByDates(non_existant_subgroup_key_5);
+[TEST] Calling: CountGroupItems(non_existant_subgroup_key_5);
+[TEST] Result: 0
+
+
+
+[---TASK---] [6.] Apply method PrintItem() for an existing item
+[---TASK---] and for a non-existing item.
+
+[TEST] Calling print item for the selected item:
+Chestnut-naped Francolin   a     1        14/ 3/2021
+[TEST] Created item:
+NON_EXISTANT               z     999       1/ 9/2021
+[TEST] Calling PrintItem for a previously created item
+[TEST] an item that does not exists in a structure:
+
+
+
+[---TASK---] [7.] Create object containing 30 items and apply method PrintAll().
+
+[TEST] Creating new Data with 30 random initial items.
+[TEST] Calling data_7->PrintAll();
+Name                       Group Subgroup Timestamp  
+Magnolia Warbler           a     2        24/ 3/2021
+Scaly Francolin            a     4        11/ 8/2021
+Gon-gon (Cape Verde Petre~ a     8        15/ 7/2021
+White-fronted Goose        a     8         8/10/2021
+Siberian Tit (Grey-headed~ c     7        22/ 6/2021
+Eagle Owl                  e     9         7/ 6/2021
+Lazuli Bunting             f     5         1/ 1/2021
+Eagle Owl                  g     7        25/11/2021
+Hume's Warbler             i     2        14/ 1/2021
+Brent Goose                j     3         4/ 6/2021
+Red-throated Diver         k     8        11/ 3/2021
+Grey (Red) Phalarope       l     3         5/10/2021
+Wallcreeper                m     7        30/ 5/2021
+Dunn's Lark                n     5         2/ 8/2021
+Great Reed Warbler         n     7         1/ 4/2021
+Black-headed Tchagra (Bus~ o     2        22/10/2021
+Spotless Starling          p     0        22/10/2021
+Hooded Wheatear            p     7        26/12/2021
+Pygmy Cormorant            p     9        30/11/2021
+Mistle Thrush              q     7        26/ 2/2021
+Velvet (White-winged) Sco~ q     8        25/ 5/2021
+Clapperton's Francolin     s     5        12/ 6/2021
+Loggerhead Shrike          s     8        24/ 6/2021
+Middle Spotted Woodpecker~ u     8        18/ 6/2021
+Corncrake                  w     0        19/ 5/2021
+White-eyed Gull            w     3         4/ 5/2021
+Black Grouse               w     8        21/ 6/2021
+Common Gull                x     0        23/ 2/2021
+Upland Sandpiper           x     8        18/ 8/2021
+American Wigeon            y     0        15/ 9/2021
+
+
+
+[---TASK---] [8.] Apply methods PrintGroup() and CountGroupItems() for a non - existing group.
+
+[TEST] Selected as non existant group key (non_existant_group_key_8): Z
+[TEST] Calling data_7->PrintGroup();
+[TEST] Calling data_7->CountGroupItems();
+Result: 0
+
+
+[---TASK---] [9.] Apply method InsertItem() if:
+
+[---TASK---] [9.a] The new item will be a member of an existing group and an existing subgroup.
+[TEST] Selected group: a
+[TEST] Selected subgroup: 2
+[TEST] Created new item:
+newItem9a                  a     2         5/ 1/2021
+[TEST] Item {9.a} inserted into data_7!
+
+[---TASK---] [9.b] The new item will be a member of an existing group but the subgroup does not exist.
+[TEST] Selected group: p
+[TEST] Selected subgroup: 1
+[TEST] Created new item:
+newItem9b                  p     1        21/12/2021
+[TEST] Item {9.b} inserted into data_7!
+
+[---TASK---] [9.c] The new item will be a member of a non-existing group.
+[TEST] Selected group: b
+[TEST] Created new item:
+newItem9c                  b     9        26/12/2021
+[TEST] Item {9.c} inserted into data_7!
+
+[---TASK---] [9.d] This item already exists.
+[TEST] Selected item:
+Magnolia Warbler           a     2        24/ 3/2021
+[TEST] Created new item:
+Magnolia Warbler           a     2        24/ 3/2021
+[TEST] Item {9.d} inserted into data_7!
+
+[---TASK---] [9.e] Apply method PrintAll() to check the results.
+Name                       Group Subgroup Timestamp  
+Magnolia Warbler           a     2        24/ 3/2021
+newItem9a                  a     2         5/ 1/2021
+Magnolia Warbler           a     2        24/ 3/2021
+Scaly Francolin            a     4        11/ 8/2021
+Gon-gon (Cape Verde Petre~ a     8        15/ 7/2021
+White-fronted Goose        a     8         8/10/2021
+newItem9c                  b     9        26/12/2021
+Siberian Tit (Grey-headed~ c     7        22/ 6/2021
+Eagle Owl                  e     9         7/ 6/2021
+Lazuli Bunting             f     5         1/ 1/2021
+Eagle Owl                  g     7        25/11/2021
+Hume's Warbler             i     2        14/ 1/2021
+Brent Goose                j     3         4/ 6/2021
+Red-throated Diver         k     8        11/ 3/2021
+Grey (Red) Phalarope       l     3         5/10/2021
+Wallcreeper                m     7        30/ 5/2021
+Dunn's Lark                n     5         2/ 8/2021
+Great Reed Warbler         n     7         1/ 4/2021
+Black-headed Tchagra (Bus~ o     2        22/10/2021
+Spotless Starling          p     0        22/10/2021
+newItem9b                  p     1        21/12/2021
+Hooded Wheatear            p     7        26/12/2021
+Pygmy Cormorant            p     9        30/11/2021
+Mistle Thrush              q     7        26/ 2/2021
+Velvet (White-winged) Sco~ q     8        25/ 5/2021
+Clapperton's Francolin     s     5        12/ 6/2021
+Loggerhead Shrike          s     8        24/ 6/2021
+Middle Spotted Woodpecker~ u     8        18/ 6/2021
+Corncrake                  w     0        19/ 5/2021
+White-eyed Gull            w     3         4/ 5/2021
+Black Grouse               w     8        21/ 6/2021
+Common Gull                x     0        23/ 2/2021
+Upland Sandpiper           x     8        18/ 8/2021
+American Wigeon            y     0        15/ 9/2021
+
+
+
+[---TASK---] [10.] Apply method InsertSubgroup() if
+
+[---TASK---] [10.a] The new subgroup will be a member of an existing group.
+[TEST] Selected group: p
+[TEST] Selected subgroup: 2
+[TEST] Creating a list with 5 new items.
+[TEST] Inserting the {10.a} list.
+
+[---TASK---] [10.b] The new subgroup will be a member of a non-existing group.
+[TEST] Selected group: d
+[TEST] Selected subgroup: 2
+[TEST] Creating a list with 5 new items.
+
+[---TASK---] [10.c] The subgroup already exists.
+[TEST] Selected group: a
+[TEST] Selected subgroup: 2
+[TEST] Creating a list with 5 new items.
+
+[---TASK---] [10.d] Apply method PrintAll() to check the results.
+Name                       Group Subgroup Timestamp  
+Magnolia Warbler           a     2        24/ 3/2021
+newItem9a                  a     2         5/ 1/2021
+Magnolia Warbler           a     2        24/ 3/2021
+Scaly Francolin            a     4        11/ 8/2021
+Gon-gon (Cape Verde Petre~ a     8        15/ 7/2021
+White-fronted Goose        a     8         8/10/2021
+newItem9c                  b     9        26/12/2021
+Siberian Tit (Grey-headed~ c     7        22/ 6/2021
+10-b-0                     d     2        28/10/2021
+10-b-1                     d     2        30/11/2021
+10-b-2                     d     2        16/ 1/2021
+10-b-3                     d     2        12/ 4/2021
+10-b-4                     d     2        30/ 8/2021
+Eagle Owl                  e     9         7/ 6/2021
+Lazuli Bunting             f     5         1/ 1/2021
+Eagle Owl                  g     7        25/11/2021
+Hume's Warbler             i     2        14/ 1/2021
+Brent Goose                j     3         4/ 6/2021
+Red-throated Diver         k     8        11/ 3/2021
+Grey (Red) Phalarope       l     3         5/10/2021
+Wallcreeper                m     7        30/ 5/2021
+Dunn's Lark                n     5         2/ 8/2021
+Great Reed Warbler         n     7         1/ 4/2021
+Black-headed Tchagra (Bus~ o     2        22/10/2021
+Spotless Starling          p     0        22/10/2021
+newItem9b                  p     1        21/12/2021
+10-a-0                     p     2         4/ 2/2021
+10-a-1                     p     2        27/ 9/2021
+10-a-2                     p     2        25/ 2/2021
+10-a-3                     p     2         7/ 6/2021
+10-a-4                     p     2        21/11/2021
+Hooded Wheatear            p     7        26/12/2021
+Pygmy Cormorant            p     9        30/11/2021
+Mistle Thrush              q     7        26/ 2/2021
+Velvet (White-winged) Sco~ q     8        25/ 5/2021
+Clapperton's Francolin     s     5        12/ 6/2021
+Loggerhead Shrike          s     8        24/ 6/2021
+Middle Spotted Woodpecker~ u     8        18/ 6/2021
+Corncrake                  w     0        19/ 5/2021
+White-eyed Gull            w     3         4/ 5/2021
+Black Grouse               w     8        21/ 6/2021
+Common Gull                x     0        23/ 2/2021
+Upland Sandpiper           x     8        18/ 8/2021
+American Wigeon            y     0        15/ 9/2021
+
+
+
+[---TASK---] [11.] Apply method InsertGroup() if:
+
+[---TASK---] [11.a] The group is new.
+[TEST] Selected group is: h
+[TEST] Result: Inserted!
+
+[---TASK---] [11.b] The group exists.
+[TEST] Selected group is: a
+[TEST] Result: did not!
+
+[---TASK---] [11.c] Apply method PrintAll() to check the results.
+Name                       Group Subgroup Timestamp  
+Magnolia Warbler           a     2        24/ 3/2021
+newItem9a                  a     2         5/ 1/2021
+Magnolia Warbler           a     2        24/ 3/2021
+Scaly Francolin            a     4        11/ 8/2021
+Gon-gon (Cape Verde Petre~ a     8        15/ 7/2021
+White-fronted Goose        a     8         8/10/2021
+newItem9c                  b     9        26/12/2021
+Siberian Tit (Grey-headed~ c     7        22/ 6/2021
+10-b-0                     d     2        28/10/2021
+10-b-1                     d     2        30/11/2021
+10-b-2                     d     2        16/ 1/2021
+10-b-3                     d     2        12/ 4/2021
+10-b-4                     d     2        30/ 8/2021
+Eagle Owl                  e     9         7/ 6/2021
+Lazuli Bunting             f     5         1/ 1/2021
+Eagle Owl                  g     7        25/11/2021
+11-a-0-0                   h     0        18/ 7/2021
+11-a-0-1                   h     0        21/ 1/2021
+11-a-0-2                   h     0         8/ 6/2021
+11-a-1-0                   h     0        20/ 4/2021
+11-a-1-1                   h     0         6/10/2021
+11-a-1-2                   h     0        19/ 7/2021
+11-a-2-0                   h     0        26/ 1/2021
+11-a-2-1                   h     0        10/ 9/2021
+11-a-2-2                   h     0        27/ 4/2021
+Hume's Warbler             i     2        14/ 1/2021
+Brent Goose                j     3         4/ 6/2021
+Red-throated Diver         k     8        11/ 3/2021
+Grey (Red) Phalarope       l     3         5/10/2021
+Wallcreeper                m     7        30/ 5/2021
+Dunn's Lark                n     5         2/ 8/2021
+Great Reed Warbler         n     7         1/ 4/2021
+Black-headed Tchagra (Bus~ o     2        22/10/2021
+Spotless Starling          p     0        22/10/2021
+newItem9b                  p     1        21/12/2021
+10-a-0                     p     2         4/ 2/2021
+10-a-1                     p     2        27/ 9/2021
+10-a-2                     p     2        25/ 2/2021
+10-a-3                     p     2         7/ 6/2021
+10-a-4                     p     2        21/11/2021
+Hooded Wheatear            p     7        26/12/2021
+Pygmy Cormorant            p     9        30/11/2021
+Mistle Thrush              q     7        26/ 2/2021
+Velvet (White-winged) Sco~ q     8        25/ 5/2021
+Clapperton's Francolin     s     5        12/ 6/2021
+Loggerhead Shrike          s     8        24/ 6/2021
+Middle Spotted Woodpecker~ u     8        18/ 6/2021
+Corncrake                  w     0        19/ 5/2021
+White-eyed Gull            w     3         4/ 5/2021
+Black Grouse               w     8        21/ 6/2021
+Common Gull                x     0        23/ 2/2021
+Upland Sandpiper           x     8        18/ 8/2021
+American Wigeon            y     0        15/ 9/2021
+
+
+
+[---TASK---] [12.] Create object containing 100 items and apply method PrintAll().
+
+[TEST] Creating new Data with 100 new items.
+[TEST] Calling printAll
+Name                       Group Subgroup Timestamp  
+Hall's Giant-Petrel        b     0        18/ 4/2021
+Namaqua Dove               b     5        17/ 9/2021
+Blue-cheeked Bee-eater     b     8        21/ 4/2021
+﻿(Black) Capped Petrel   b     8        17/ 4/2021
+Rock Sparrow               c     1         5/ 2/2021
+Little Gull                c     6        27/12/2021
+Fan-tailed Raven           c     7        31/ 3/2021
+Cerulean Warbler           d     1        14/12/2021
+Jackson's Francolin        d     6        31/12/2021
+Blue Grosbeak              d     6         8/12/2021
+Icterine Warbler           e     8         2/ 1/2021
+Black Stork                f     5        19/ 3/2021
+Red-winged Blackbird       g     0        10/ 7/2021
+Blue-grey Gnatcatcher      g     2        29/ 9/2021
+Eastern Crowned-Warbler    g     4        31/12/2021
+Parrot Crossbill           g     7         6/ 5/2021
+Streaked Weaver            g     8        31/12/2021
+Black-headed Bunting       h     2        22/10/2021
+Snowy Owl                  h     6        19/12/2021
+Grey-necked Bunting        h     7         2/ 7/2021
+Citrine Wagtail            i     6         6/ 5/2021
+Caucasian (Black) Grouse   i     7        21/ 7/2021
+Cape May Warbler           i     7         1/ 4/2021
+Great Blue Heron           i     8        14/ 7/2021
+Temminck's Stint           i     9        19/11/2021
+Tree Pipit                 i     9        15/ 7/2021
+Hume's Warbler             j     1        29/ 4/2021
+Mute Swan                  j     2         8/12/2021
+Bay-breasted Warbler       j     3        11/ 7/2021
+Sardinian Warbler          j     5        17/ 9/2021
+Brnnich's Guillemot (Thi~j     6        10/ 6/2021
+Roseate Tern               k     1        25/ 1/2021
+Gray's Grasshopper Warble~ l     6         5/ 1/2021
+Bonelli's Eagle            l     8         8/11/2021
+Honey Buzzard              l     9        12/12/2021
+Sooty Falcon               m     9        20/11/2021
+Village (Black-headed) We~ m     9        11/ 6/2021
+Black-crowned Finch-lark   n     2        15/ 9/2021
+Pallas's Grasshopper Warb~ n     2         6/ 3/2021
+Forest Francolin           n     3        12/11/2021
+Great Crested Grebe        n     4         5/11/2021
+Corn Bunting               n     6        10/ 2/2021
+Audubon's Shearwater       n     9         9/11/2021
+Iberian Chiffchaff         o     0         8/ 6/2021
+Hoopoe Lark                o     0         2/ 2/2021
+Red-billed Oxpecker        o     1        29/11/2021
+Balearic Shearwater        o     2         1/12/2021
+Red Avadavat               o     6        24/ 3/2021
+Red-necked Spurfowl        o     8        30/ 5/2021
+[domestic Ringed Turtle    o     8        23/10/2021
+Ring-necked Duck           o     8        28/12/2021
+Yellow-billed Oxpecker     p     2        18/ 6/2021
+Swainson's Spurfowl        p     6         1/ 1/2021
+Glossy Ibis                p     6         7/10/2021
+Dunnock                    q     2        22/ 9/2021
+Turkey Vulture             r     1        18/ 6/2021
+Yellow-throated Vireo      r     2         2/ 5/2021
+Spotted Crake              r     3        16/10/2021
+Marabou Stork              r     5        20/ 5/2021
+Ruff                       s     4        28/ 1/2021
+Mistle Thrush              s     5        13/ 1/2021
+Black-faced Bunting        s     6        17/11/2021
+Mugimaki Flycatcher        s     6        12/ 2/2021
+Caspian Snowcock           s     7        20/ 3/2021
+Great Shearwater           s     8        18/ 3/2021
+Little Auk (Dovekie)       s     8        18/ 5/2021
+Nile Valley Sunbird        s     9         3/ 4/2021
+Small Button Quail (Andal~ t     1        15/ 7/2021
+Hoopoe                     t     1         8/ 9/2021
+Lesser Sand (Mongolian) P~ t     2        22/11/2021
+Ring-necked Duck           t     7         1/ 6/2021
+Cape Verde Swamp-Warbler   t     7        21/12/2021
+Pacific Golden Plover      t     9         2/ 9/2021
+Pied Flycatcher            u     2        18/ 3/2021
+Moorland Francolin         u     2        19/10/2021
+Greater Sand Plover        u     3        29/ 6/2021
+Great Grey (Southern) Shr~ u     6        13/12/2021
+Great Spotted Cuckoo       v     1        13/10/2021
+Eastern Chiffchaff         v     1         6/ 1/2021
+Balearic Shearwater        v     5        18/ 7/2021
+Trumpeter Finch            v     6        20/ 9/2021
+Collared Dove              v     6        23/10/2021
+Cory's Shearwater          v     7         7/ 5/2021
+Blue Grosbeak              v     7         3/ 8/2021
+Kittlitz's Plover          v     8        31/ 3/2021
+Eskimo Curlew              w     1         3/10/2021
+Quail                      w     3        29/ 1/2021
+Erckel's Francolin         w     8        29/ 1/2021
+Kirk's Francolin           w     9         3/ 1/2021
+Chestnut-breasted (White-~ x     1        28/ 1/2021
+American Crow              x     3         8/ 2/2021
+Brown-necked Raven         x     4        20/ 8/2021
+Melodious Warbler          x     6        23/ 9/2021
+Hooded Warbler             y     4         7/ 6/2021
+Marsh Harrier              y     6        15/ 8/2021
+Great (White) Egret        z     1        18/ 4/2021
+Booted Eagle               z     1        22/ 5/2021
+Corncrake                  z     5         2/ 1/2021
+Siskin                     z     7        15/ 9/2021
+Blue-cheeked Bee-eater     z     9        25/ 3/2021
+
+
+
+[---TASK---] [13.] Apply method RemoveItem() so that:
+
+[---TASK---] [13.a] After removing the subgroup does not disappear.
+[TEST] Selected group: b
+[TEST] Selected subgroup: 8
+[TEST] Selected item name: Blue-cheeked Bee-eater
+[TEST] The selected item was removed successfully.
+
+[---TASK---] [13.b] After removing the subgroup disappears but the group is kept.
+[TEST] Selected group: c
+[TEST] Selected subgroup: 1
+[TEST] Selected item name: Rock Sparrow
+[TEST] The selected item was removed successfully.
+
+[---TASK---] [13.c] After removing the group disappears.
+[TEST] Selected group: e
+[TEST] Selected subgroup: 8
+[TEST] Selected item name: Icterine Warbler
+[TEST] The selected item was removed successfully.
+
+[---TASK---] [13.d] The item to remove does not exist.
+[TEST] Item to be removed:
+TRY FIND ME                Z     99       15/12/2021
+[TEST] Could not remove the selected item.
+
+[---TASK---] [13.e] Apply method PrintAll() to check the results.
+Name                       Group Subgroup Timestamp  
+Hall's Giant-Petrel        b     0        18/ 4/2021
+Namaqua Dove               b     5        17/ 9/2021
+﻿(Black) Capped Petrel   b     8        17/ 4/2021
+Little Gull                c     6        27/12/2021
+Fan-tailed Raven           c     7        31/ 3/2021
+Cerulean Warbler           d     1        14/12/2021
+Jackson's Francolin        d     6        31/12/2021
+Blue Grosbeak              d     6         8/12/2021
+Black Stork                f     5        19/ 3/2021
+Red-winged Blackbird       g     0        10/ 7/2021
+Blue-grey Gnatcatcher      g     2        29/ 9/2021
+Eastern Crowned-Warbler    g     4        31/12/2021
+Parrot Crossbill           g     7         6/ 5/2021
+Streaked Weaver            g     8        31/12/2021
+Black-headed Bunting       h     2        22/10/2021
+Snowy Owl                  h     6        19/12/2021
+Grey-necked Bunting        h     7         2/ 7/2021
+Citrine Wagtail            i     6         6/ 5/2021
+Caucasian (Black) Grouse   i     7        21/ 7/2021
+Cape May Warbler           i     7         1/ 4/2021
+Great Blue Heron           i     8        14/ 7/2021
+Temminck's Stint           i     9        19/11/2021
+Tree Pipit                 i     9        15/ 7/2021
+Hume's Warbler             j     1        29/ 4/2021
+Mute Swan                  j     2         8/12/2021
+Bay-breasted Warbler       j     3        11/ 7/2021
+Sardinian Warbler          j     5        17/ 9/2021
+Brnnich's Guillemot (Thi~  j     6        10/ 6/2021
+Roseate Tern               k     1        25/ 1/2021
+Gray's Grasshopper Warble~ l     6         5/ 1/2021
+Bonelli's Eagle            l     8         8/11/2021
+Honey Buzzard              l     9        12/12/2021
+Sooty Falcon               m     9        20/11/2021
+Village (Black-headed) We~ m     9        11/ 6/2021
+Black-crowned Finch-lark   n     2        15/ 9/2021
+Pallas's Grasshopper Warb~ n     2         6/ 3/2021
+Forest Francolin           n     3        12/11/2021
+Great Crested Grebe        n     4         5/11/2021
+Corn Bunting               n     6        10/ 2/2021
+Audubon's Shearwater       n     9         9/11/2021
+Iberian Chiffchaff         o     0         8/ 6/2021
+Hoopoe Lark                o     0         2/ 2/2021
+Red-billed Oxpecker        o     1        29/11/2021
+Balearic Shearwater        o     2         1/12/2021
+Red Avadavat               o     6        24/ 3/2021
+Red-necked Spurfowl        o     8        30/ 5/2021
+[domestic Ringed Turtle    o     8        23/10/2021
+Ring-necked Duck           o     8        28/12/2021
+Yellow-billed Oxpecker     p     2        18/ 6/2021
+Swainson's Spurfowl        p     6         1/ 1/2021
+Glossy Ibis                p     6         7/10/2021
+Dunnock                    q     2        22/ 9/2021
+Turkey Vulture             r     1        18/ 6/2021
+Yellow-throated Vireo      r     2         2/ 5/2021
+Spotted Crake              r     3        16/10/2021
+Marabou Stork              r     5        20/ 5/2021
+Ruff                       s     4        28/ 1/2021
+Mistle Thrush              s     5        13/ 1/2021
+Black-faced Bunting        s     6        17/11/2021
+Mugimaki Flycatcher        s     6        12/ 2/2021
+Caspian Snowcock           s     7        20/ 3/2021
+Great Shearwater           s     8        18/ 3/2021
+Little Auk (Dovekie)       s     8        18/ 5/2021
+Nile Valley Sunbird        s     9         3/ 4/2021
+Small Button Quail (Andal~ t     1        15/ 7/2021
+Hoopoe                     t     1         8/ 9/2021
+Lesser Sand (Mongolian) P~ t     2        22/11/2021
+Ring-necked Duck           t     7         1/ 6/2021
+Cape Verde Swamp-Warbler   t     7        21/12/2021
+Pacific Golden Plover      t     9         2/ 9/2021
+Pied Flycatcher            u     2        18/ 3/2021
+Moorland Francolin         u     2        19/10/2021
+Greater Sand Plover        u     3        29/ 6/2021
+Great Grey (Southern) Shr~ u     6        13/12/2021
+Great Spotted Cuckoo       v     1        13/10/2021
+Eastern Chiffchaff         v     1         6/ 1/2021
+Balearic Shearwater        v     5        18/ 7/2021
+Trumpeter Finch            v     6        20/ 9/2021
+Collared Dove              v     6        23/10/2021
+Cory's Shearwater          v     7         7/ 5/2021
+Blue Grosbeak              v     7         3/ 8/2021
+Kittlitz's Plover          v     8        31/ 3/2021
+Eskimo Curlew              w     1         3/10/2021
+Quail                      w     3        29/ 1/2021
+Erckel's Francolin         w     8        29/ 1/2021
+Kirk's Francolin           w     9         3/ 1/2021
+Chestnut-breasted (White-~ x     1        28/ 1/2021
+American Crow              x     3         8/ 2/2021
+Brown-necked Raven         x     4        20/ 8/2021
+Melodious Warbler          x     6        23/ 9/2021
+Hooded Warbler             y     4         7/ 6/2021
+Marsh Harrier              y     6        15/ 8/2021
+Great (White) Egret        z     1        18/ 4/2021
+Booted Eagle               z     1        22/ 5/2021
+Corncrake                  z     5         2/ 1/2021
+Siskin                     z     7        15/ 9/2021
+Blue-cheeked Bee-eater     z     9        25/ 3/2021
+
+
+
+[---TASK---] [14.] Apply method RemoveSubgroup() so that:
+
+[---TASK---] [14.a] After removing the group is kept.
+[TEST] Selected group: f
+[TEST] Selected subgroup: 5
+[TEST] The selected subgroup was removed successfully.
+
+[---TASK---] [14.b] After removing the group disappears.
+[TEST] Selected group: k
+[TEST] Selected subgroup: 1
+[TEST] The selected subgroup was removed successfully.
+
+[---TASK---] [14.c] This subgroup does not exist.
+[TEST] Selected group: Z
+[TEST] Selected subgroup: 99
+[TEST] Could not remove the selected subgroup.
+
+[---TASK---] [14.d] Apply method PrintAll() to check the results.
+Name                       Group Subgroup Timestamp  
+Hall's Giant-Petrel        b     0        18/ 4/2021
+Namaqua Dove               b     5        17/ 9/2021
+﻿(Black) Capped Petrel      b     8        17/ 4/2021
+Little Gull                c     6        27/12/2021
+Fan-tailed Raven           c     7        31/ 3/2021
+Cerulean Warbler           d     1        14/12/2021
+Jackson's Francolin        d     6        31/12/2021
+Blue Grosbeak              d     6         8/12/2021
+Red-winged Blackbird       g     0        10/ 7/2021
+Blue-grey Gnatcatcher      g     2        29/ 9/2021
+Eastern Crowned-Warbler    g     4        31/12/2021
+Parrot Crossbill           g     7         6/ 5/2021
+Streaked Weaver            g     8        31/12/2021
+Black-headed Bunting       h     2        22/10/2021
+Snowy Owl                  h     6        19/12/2021
+Grey-necked Bunting        h     7         2/ 7/2021
+Citrine Wagtail            i     6         6/ 5/2021
+Caucasian (Black) Grouse   i     7        21/ 7/2021
+Cape May Warbler           i     7         1/ 4/2021
+Great Blue Heron           i     8        14/ 7/2021
+Temminck's Stint           i     9        19/11/2021
+Tree Pipit                 i     9        15/ 7/2021
+Hume's Warbler             j     1        29/ 4/2021
+Mute Swan                  j     2         8/12/2021
+Bay-breasted Warbler       j     3        11/ 7/2021
+Sardinian Warbler          j     5        17/ 9/2021
+Brnnich's Guillemot (Thi~  j     6        10/ 6/2021
+Gray's Grasshopper Warble~ l     6         5/ 1/2021
+Bonelli's Eagle            l     8         8/11/2021
+Honey Buzzard              l     9        12/12/2021
+Sooty Falcon               m     9        20/11/2021
+Village (Black-headed) We~ m     9        11/ 6/2021
+Black-crowned Finch-lark   n     2        15/ 9/2021
+Pallas's Grasshopper Warb~ n     2         6/ 3/2021
+Forest Francolin           n     3        12/11/2021
+Great Crested Grebe        n     4         5/11/2021
+Corn Bunting               n     6        10/ 2/2021
+Audubon's Shearwater       n     9         9/11/2021
+Iberian Chiffchaff         o     0         8/ 6/2021
+Hoopoe Lark                o     0         2/ 2/2021
+Red-billed Oxpecker        o     1        29/11/2021
+Balearic Shearwater        o     2         1/12/2021
+Red Avadavat               o     6        24/ 3/2021
+Red-necked Spurfowl        o     8        30/ 5/2021
+[domestic Ringed Turtle    o     8        23/10/2021
+Ring-necked Duck           o     8        28/12/2021
+Yellow-billed Oxpecker     p     2        18/ 6/2021
+Swainson's Spurfowl        p     6         1/ 1/2021
+Glossy Ibis                p     6         7/10/2021
+Dunnock                    q     2        22/ 9/2021
+Turkey Vulture             r     1        18/ 6/2021
+Yellow-throated Vireo      r     2         2/ 5/2021
+Spotted Crake              r     3        16/10/2021
+Marabou Stork              r     5        20/ 5/2021
+Ruff                       s     4        28/ 1/2021
+Mistle Thrush              s     5        13/ 1/2021
+Black-faced Bunting        s     6        17/11/2021
+Mugimaki Flycatcher        s     6        12/ 2/2021
+Caspian Snowcock           s     7        20/ 3/2021
+Great Shearwater           s     8        18/ 3/2021
+Little Auk (Dovekie)       s     8        18/ 5/2021
+Nile Valley Sunbird        s     9         3/ 4/2021
+Small Button Quail (Andal~ t     1        15/ 7/2021
+Hoopoe                     t     1         8/ 9/2021
+Lesser Sand (Mongolian) P~ t     2        22/11/2021
+Ring-necked Duck           t     7         1/ 6/2021
+Cape Verde Swamp-Warbler   t     7        21/12/2021
+Pacific Golden Plover      t     9         2/ 9/2021
+Pied Flycatcher            u     2        18/ 3/2021
+Moorland Francolin         u     2        19/10/2021
+Greater Sand Plover        u     3        29/ 6/2021
+Great Grey (Southern) Shr~ u     6        13/12/2021
+Great Spotted Cuckoo       v     1        13/10/2021
+Eastern Chiffchaff         v     1         6/ 1/2021
+Balearic Shearwater        v     5        18/ 7/2021
+Trumpeter Finch            v     6        20/ 9/2021
+Collared Dove              v     6        23/10/2021
+Cory's Shearwater          v     7         7/ 5/2021
+Blue Grosbeak              v     7         3/ 8/2021
+Kittlitz's Plover          v     8        31/ 3/2021
+Eskimo Curlew              w     1         3/10/2021
+Quail                      w     3        29/ 1/2021
+Erckel's Francolin         w     8        29/ 1/2021
+Kirk's Francolin           w     9         3/ 1/2021
+Chestnut-breasted (White-~ x     1        28/ 1/2021
+American Crow              x     3         8/ 2/2021
+Brown-necked Raven         x     4        20/ 8/2021
+Melodious Warbler          x     6        23/ 9/2021
+Hooded Warbler             y     4         7/ 6/2021
+Marsh Harrier              y     6        15/ 8/2021
+Great (White) Egret        z     1        18/ 4/2021
+Booted Eagle               z     1        22/ 5/2021
+Corncrake                  z     5         2/ 1/2021
+Siskin                     z     7        15/ 9/2021
+Blue-cheeked Bee-eater     z     9        25/ 3/2021
+
+
+
+[---TASK---] [15.] ApplyMethod RemoveGroup() so that:
+
+[---TASK---] [15.a] The group was an existing one.
+[TEST] Selected group: b
+[TEST] The selected group was removed successfully.
+
+[---TASK---] [15.b] The group does not exist.
+[TEST] Selected group: X
+[TEST] Could not remove the selected group.
+
+[---TASK---] [15.c] Apply method PrintAll() to check the results.
+Name                       Group Subgroup Timestamp  
+Little Gull                c     6        27/12/2021
+Fan-tailed Raven           c     7        31/ 3/2021
+Cerulean Warbler           d     1        14/12/2021
+Jackson's Francolin        d     6        31/12/2021
+Blue Grosbeak              d     6         8/12/2021
+Red-winged Blackbird       g     0        10/ 7/2021
+Blue-grey Gnatcatcher      g     2        29/ 9/2021
+Eastern Crowned-Warbler    g     4        31/12/2021
+Parrot Crossbill           g     7         6/ 5/2021
+Streaked Weaver            g     8        31/12/2021
+Black-headed Bunting       h     2        22/10/2021
+Snowy Owl                  h     6        19/12/2021
+Grey-necked Bunting        h     7         2/ 7/2021
+Citrine Wagtail            i     6         6/ 5/2021
+Caucasian (Black) Grouse   i     7        21/ 7/2021
+Cape May Warbler           i     7         1/ 4/2021
+Great Blue Heron           i     8        14/ 7/2021
+Temminck's Stint           i     9        19/11/2021
+Tree Pipit                 i     9        15/ 7/2021
+Hume's Warbler             j     1        29/ 4/2021
+Mute Swan                  j     2         8/12/2021
+Bay-breasted Warbler       j     3        11/ 7/2021
+Sardinian Warbler          j     5        17/ 9/2021
+Brnnich's Guillemot (Thi~  j     6        10/ 6/2021
+Gray's Grasshopper Warble~ l     6         5/ 1/2021
+Bonelli's Eagle            l     8         8/11/2021
+Honey Buzzard              l     9        12/12/2021
+Sooty Falcon               m     9        20/11/2021
+Village (Black-headed) We~ m     9        11/ 6/2021
+Black-crowned Finch-lark   n     2        15/ 9/2021
+Pallas's Grasshopper Warb~ n     2         6/ 3/2021
+Forest Francolin           n     3        12/11/2021
+Great Crested Grebe        n     4         5/11/2021
+Corn Bunting               n     6        10/ 2/2021
+Audubon's Shearwater       n     9         9/11/2021
+Iberian Chiffchaff         o     0         8/ 6/2021
+Hoopoe Lark                o     0         2/ 2/2021
+Red-billed Oxpecker        o     1        29/11/2021
+Balearic Shearwater        o     2         1/12/2021
+Red Avadavat               o     6        24/ 3/2021
+Red-necked Spurfowl        o     8        30/ 5/2021
+[domestic Ringed Turtle    o     8        23/10/2021
+Ring-necked Duck           o     8        28/12/2021
+Yellow-billed Oxpecker     p     2        18/ 6/2021
+Swainson's Spurfowl        p     6         1/ 1/2021
+Glossy Ibis                p     6         7/10/2021
+Dunnock                    q     2        22/ 9/2021
+Turkey Vulture             r     1        18/ 6/2021
+Yellow-throated Vireo      r     2         2/ 5/2021
+Spotted Crake              r     3        16/10/2021
+Marabou Stork              r     5        20/ 5/2021
+Ruff                       s     4        28/ 1/2021
+Mistle Thrush              s     5        13/ 1/2021
+Black-faced Bunting        s     6        17/11/2021
+Mugimaki Flycatcher        s     6        12/ 2/2021
+Caspian Snowcock           s     7        20/ 3/2021
+Great Shearwater           s     8        18/ 3/2021
+Little Auk (Dovekie)       s     8        18/ 5/2021
+Nile Valley Sunbird        s     9         3/ 4/2021
+Small Button Quail (Andal~ t     1        15/ 7/2021
+Hoopoe                     t     1         8/ 9/2021
+Lesser Sand (Mongolian) P~ t     2        22/11/2021
+Ring-necked Duck           t     7         1/ 6/2021
+Cape Verde Swamp-Warbler   t     7        21/12/2021
+Pacific Golden Plover      t     9         2/ 9/2021
+Pied Flycatcher            u     2        18/ 3/2021
+Moorland Francolin         u     2        19/10/2021
+Greater Sand Plover        u     3        29/ 6/2021
+Great Grey (Southern) Shr~ u     6        13/12/2021
+Great Spotted Cuckoo       v     1        13/10/2021
+Eastern Chiffchaff         v     1         6/ 1/2021
+Balearic Shearwater        v     5        18/ 7/2021
+Trumpeter Finch            v     6        20/ 9/2021
+Collared Dove              v     6        23/10/2021
+Cory's Shearwater          v     7         7/ 5/2021
+Blue Grosbeak              v     7         3/ 8/2021
+Kittlitz's Plover          v     8        31/ 3/2021
+Eskimo Curlew              w     1         3/10/2021
+Quail                      w     3        29/ 1/2021
+Erckel's Francolin         w     8        29/ 1/2021
+Kirk's Francolin           w     9         3/ 1/2021
+Chestnut-breasted (White-~ x     1        28/ 1/2021
+American Crow              x     3         8/ 2/2021
+Brown-necked Raven         x     4        20/ 8/2021
+Melodious Warbler          x     6        23/ 9/2021
+Hooded Warbler             y     4         7/ 6/2021
+Marsh Harrier              y     6        15/ 8/2021
+Great (White) Egret        z     1        18/ 4/2021
+Booted Eagle               z     1        22/ 5/2021
+Corncrake                  z     5         2/ 1/2021
+Siskin                     z     7        15/ 9/2021
+Blue-cheeked Bee-eater     z     9        25/ 3/2021
+
+
+
+Done
+
+
+
