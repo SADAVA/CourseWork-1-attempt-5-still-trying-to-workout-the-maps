@@ -23,11 +23,11 @@ Data::~Data()
 void Data::PrintAll()
 {
 	std::cout <<
-		std::left  << std::setw(27) << "Name" <<
-		              std::setw(6)  << "Group" <<
-		              std::setw(9)  << "Subgroup" <<
-		              std::setw(11) << "Timestamp" <<
-		              std::endl;
+		std::left << std::setw(27) << "Name" <<
+		std::setw(6) << "Group" <<
+		std::setw(9) << "Subgroup" <<
+		std::setw(11) << "Timestamp" <<
+		std::endl;
 
 	for (auto group = structure_.begin(); group != structure_.end(); ++group)
 	{
@@ -75,7 +75,7 @@ void Data::PrintSubgroup(subgroup* subgroup)
 void Data::PrintItem(Item* item)
 {
 	if (item == nullptr) return;
-	
+
 	std::cout << *item << std::endl;
 }
 
@@ -140,7 +140,7 @@ void Data::PrintSubgroupByDates(group* group, int i)
 void Data::PrintSubgroupByDates(subgroup* subgroup_)
 {
 	if (subgroup_ == nullptr) return;
-	
+
 	subgroup* copy(subgroup_);
 
 	copy->sort(CompareDates);
@@ -166,7 +166,7 @@ Item* Data::GetItem(char c, int i, std::string s)
 Item* Data::GetItem(group* group, int i, std::string s)
 {
 	if (group == nullptr) return nullptr;
-	
+
 	return GetItem(GetSubgroup(group, i), s);
 }
 
@@ -196,12 +196,12 @@ Item* Data::InsertItem(char c, int i, std::string s, Date d)
 subgroup* Data::InsertSubgroup(char s, int i, std::initializer_list<Item*> items)
 {
 	// Subgroup already exists.
-	if (structure_[s] != nullptr)
-		if ((*structure_[s])[i] != nullptr)
+	if (structure_.count(s) != 0)
+		if ((*structure_[s]).count(i) != 0)
 			return nullptr;
 
 	// Create missing group
-	if (structure_[s] == nullptr)
+	if (structure_.count(s) == 0)
 	{
 		structure_[s] = new group;
 	}
@@ -211,7 +211,7 @@ subgroup* Data::InsertSubgroup(char s, int i, std::initializer_list<Item*> items
 
 group* Data::InsertGroup(char c, std::initializer_list<int> subgroups, std::initializer_list<std::initializer_list<Item*>> items)
 {
-	if (structure_[c] != nullptr)
+	if (structure_.count(c) != 0)
 		return nullptr;
 
 	structure_[c] = new group;
@@ -222,7 +222,7 @@ group* Data::InsertGroup(char c, std::initializer_list<int> subgroups, std::init
 	while (s != subgroups.end())
 	{
 		InsertSubgroup(c, *s, *i);
-		
+
 		++s;
 		++i;
 	}
@@ -232,10 +232,10 @@ group* Data::InsertGroup(char c, std::initializer_list<int> subgroups, std::init
 
 bool Data::RemoveItem(char c, int i, std::string s)
 {
-	if (structure_[c] == nullptr)
+	if (structure_.count(c) == 0)
 		return false;
 
-	if ((*structure_[c])[i] == nullptr)
+	if ((*structure_[c]).count(i) == 0)
 		return false;
 
 	const auto group = structure_[c];
@@ -252,7 +252,7 @@ bool Data::RemoveItem(char c, int i, std::string s)
 
 			if (group->empty())
 				structure_.erase(c);
-			
+
 			return true;
 		}
 	}
@@ -262,18 +262,49 @@ bool Data::RemoveItem(char c, int i, std::string s)
 
 bool Data::RemoveSubgroup(char c, int i)
 {
-	return false;
+	if (structure_.count(c) == 0)
+		return false;
+
+	if ((*structure_[c]).count(i) == 0)
+		return false;
+
+	const auto subgroup = (*structure_[c])[i];
+
+	if (!subgroup->empty())
+	{
+		for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
+		{
+			subgroup->remove(*item);
+		}
+	}
+
+	structure_[c]->erase(i);
+
+	return true;
 }
 
 bool Data::RemoveGroup(char c)
 {
-	return false;
+	if (structure_.count(c) == 0)
+		return false;
+
+	if (!structure_[c]->empty())
+	{
+		for (auto subgroup = structure_[c]->begin(); subgroup != structure_[c]->end(); ++subgroup)
+		{
+			RemoveSubgroup(c, subgroup->first);
+		}
+	}
+
+	structure_.erase(c);
+
+	return true;
 }
 
 int Data::CountItems()
 {
 	int result = 0;
-	
+
 	for (auto group = structure_.begin(); group != structure_.end(); ++group)
 	{
 		result += CountGroupItems(group->second);
@@ -290,7 +321,7 @@ int Data::CountGroupItems(char c)
 int Data::CountGroupItems(group* group)
 {
 	if (group == nullptr) return 0;
-	
+
 	int result = 0;
 
 	for (auto subgroup = group->begin(); subgroup != group->end(); ++subgroup)
@@ -314,7 +345,7 @@ int Data::CountSubgroupItems(group* group, int i)
 int Data::CountSubgroupItems(subgroup* subgroup)
 {
 	if (subgroup == nullptr) return 0;
-	
+
 	int result = 0;
 
 	for (auto item = subgroup->begin(); item != subgroup->end(); ++item)
@@ -328,14 +359,14 @@ int Data::CountSubgroupItems(subgroup* subgroup)
 Item* Data::InsertItem(Item* item)
 {
 	if (item == nullptr) return nullptr;
-	
-	if (structure_[item->get_group()] == nullptr)
+
+	if (structure_.count(item->get_group()) == 0)
 		structure_[item->get_group()] = new group;
 
-	if ((*structure_[item->get_group()])[item->get_subgroup()] == nullptr)
+	if ((*structure_[item->get_group()]).count(item->get_subgroup()) == 0)
 		(*structure_[item->get_group()])[item->get_subgroup()] = new subgroup;
 
 	(*structure_[item->get_group()])[item->get_subgroup()]->push_back(item);
-	
+
 	return item;
 }

@@ -689,14 +689,14 @@ int main()
     std::cout << task_log_prefix << "[13.] Apply method RemoveItem() so that:" << std::endl;
     std::cout << std::endl;
 
-
     std::cout << task_log_prefix << "[13.a] After removing the subgroup does not disappear." << std::endl;
 
 	// What means we need to find a subgroup with size() > 1
     char searched_group_13_a = NULL;
     int searched_subgroup_13_a = NULL;
+    std::string searched_item_name_13_a = "";
 
-    for (auto group = data_7->structure_.begin(); group != data_7->structure_.end(); ++group)
+    for (auto group = data_12->structure_.begin(); group != data_12->structure_.end(); ++group)
     {
         if (group->second->empty()) continue;
 
@@ -706,33 +706,305 @@ int main()
 
             searched_group_13_a = group->first;
             searched_subgroup_13_a = subgroup->first;
+            searched_item_name_13_a = (*subgroup->second->begin())->get_name();
 
             break;
         }
 
-        if (searched_group_13_a != NULL && searched_subgroup_13_a != NULL)
+        if (searched_group_13_a != NULL && searched_subgroup_13_a != NULL && !searched_item_name_13_a.empty())
             break;
     }
 
-    if (group_key_10_c == NULL || subgroup_key_10_c == NULL)
+    if (searched_group_13_a == NULL || searched_subgroup_13_a == NULL || searched_item_name_13_a.empty())
     {
-        std::cout << error_log_prefix << "Either group_key_10_c or subgroup_key_10_c is NULL!" << std::endl;
+        std::cout << error_log_prefix << "Either searched_group_13_a or searched_subgroup_13_a or searched_item_name_13_a is NULL!" << std::endl;
         std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
-        std::cout << error_log_prefix << "9.b will be skipped!" << std::endl;
+        std::cout << error_log_prefix << "13.a will be skipped!" << std::endl;
     }
     else
     {
-        std::cout << test_log_prefix << "Selected group: " << group_key_10_c << std::endl;
-        std::cout << test_log_prefix << "Selected subgroup: " << subgroup_key_10_c << std::endl;
+        std::cout << test_log_prefix << "Selected group: " << searched_group_13_a << std::endl;
+        std::cout << test_log_prefix << "Selected subgroup: " << searched_subgroup_13_a << std::endl;
+        std::cout << test_log_prefix << "Selected item name: " << searched_item_name_13_a << std::endl;
 
+        if (data_12->RemoveItem(searched_group_13_a, searched_subgroup_13_a, searched_item_name_13_a))
+            std::cout << test_log_prefix << "The selected item was removed successfully." << std::endl;
+        else
+            std::cout << test_log_prefix << "Could not remove the selected item." << std::endl;
+    }
 	
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[13.b] After removing the subgroup disappears but the group is kept." << std::endl;
+
+	// What means we need to find a subgroup with only one item, but a group with more than one subgroup.
+    char searched_group_13_b = NULL;
+    int searched_subgroup_13_b = NULL;
+    std::string searched_item_name_13_b = "";
+
+    for (auto group = data_12->structure_.begin(); group != data_12->structure_.end(); ++group)
+    {
+        if (group->second->size() < 2) continue;
+
+        for (auto subgroup = group->second->begin(); subgroup != group->second->end(); ++subgroup)
+        {
+            if (subgroup->second->size() != 1) continue;
+
+            searched_group_13_b = group->first;
+            searched_subgroup_13_b = subgroup->first;
+            searched_item_name_13_b = (*subgroup->second->begin())->get_name();
+
+            break;
+        }
+
+        if (searched_group_13_b != NULL && searched_subgroup_13_b != NULL && !searched_item_name_13_b.empty())
+            break;
+    }
+
+    if (searched_group_13_b == NULL || searched_subgroup_13_b == NULL || searched_item_name_13_b.empty())
+    {
+        std::cout << error_log_prefix << "Either searched_group_13_b or searched_subgroup_13_b or searched_item_name_13_b is NULL!" << std::endl;
+        std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
+        std::cout << error_log_prefix << "13.b will be skipped!" << std::endl;
+    }
+    else
+    {
+        std::cout << test_log_prefix << "Selected group: " << searched_group_13_b << std::endl;
+        std::cout << test_log_prefix << "Selected subgroup: " << searched_subgroup_13_b << std::endl;
+        std::cout << test_log_prefix << "Selected item name: " << searched_item_name_13_b << std::endl;
+
+        if (data_12->RemoveItem(searched_group_13_b, searched_subgroup_13_b, searched_item_name_13_b))
+            std::cout << test_log_prefix << "The selected item was removed successfully." << std::endl;
+        else
+            std::cout << test_log_prefix << "Could not remove the selected item." << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[13.c] After removing the group disappears." << std::endl;
+
+    // What means we need to find a subgroup with only one item, and a group with one subgroup.
+    char searched_group_13_c = NULL;
+    int searched_subgroup_13_c = NULL;
+    std::string searched_item_name_13_c = "";
+
+    for (auto group = data_12->structure_.begin(); group != data_12->structure_.end(); ++group)
+    {
+        if (group->second->size() != 1) continue;
+
+        for (auto subgroup = group->second->begin(); subgroup != group->second->end(); ++subgroup)
+        {
+            if (subgroup->second->size() != 1) continue;
+
+            searched_group_13_c = group->first;
+            searched_subgroup_13_c = subgroup->first;
+            searched_item_name_13_c = (*subgroup->second->begin())->get_name();
+
+            break;
+        }
+
+        if (searched_group_13_c != NULL && searched_subgroup_13_c != NULL && !searched_item_name_13_c.empty())
+            break;
+    }
+
+    if (searched_group_13_c == NULL || searched_subgroup_13_c == NULL || searched_item_name_13_c.empty())
+    {
+        std::cout << error_log_prefix << "Either searched_group_13_c or searched_subgroup_13_c or searched_item_name_13_c is NULL!" << std::endl;
+        std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
+        std::cout << error_log_prefix << "13.b will be skipped!" << std::endl;
+    }
+    else
+    {
+        std::cout << test_log_prefix << "Selected group: " << searched_group_13_c << std::endl;
+        std::cout << test_log_prefix << "Selected subgroup: " << searched_subgroup_13_c << std::endl;
+        std::cout << test_log_prefix << "Selected item name: " << searched_item_name_13_c << std::endl;
+
+        if (data_12->RemoveItem(searched_group_13_c, searched_subgroup_13_c, searched_item_name_13_c))
+            std::cout << test_log_prefix << "The selected item was removed successfully." << std::endl;
+        else
+            std::cout << test_log_prefix << "Could not remove the selected item." << std::endl;
+    }
+
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[13.d] The item to remove does not exist." << std::endl;
+
+	// This item 100% does not exist.
+    char searched_group_13_d = 'Z';
+    int searched_subgroup_13_d = 99;
+    std::string searched_item_name_13_d = "TRY FIND ME";
+
+    Item* item_13_d = new Item(searched_group_13_d, searched_subgroup_13_d, searched_item_name_13_d);
+
+    std::cout << test_log_prefix << "Item to be removed:" << std::endl;
+    data_12->PrintItem(item_13_d);
+
+    if (data_12->RemoveItem(searched_group_13_d, searched_subgroup_13_d, searched_item_name_13_d))
+        std::cout << test_log_prefix << "The selected item was removed successfully." << std::endl;
+    else
+        std::cout << test_log_prefix << "Could not remove the selected item." << std::endl;
+
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[13.e] Apply method PrintAll() to check the results." << std::endl;
+
+    data_12->PrintAll();
+
+
     // --- // --- // --- //
 
 
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[14.] Apply method RemoveSubgroup() so that:" << std::endl;
+    std::cout << std::endl;
 
+    std::cout << task_log_prefix << "[14.a] After removing the group is kept." << std::endl;
+
+	// A group with > 1 subgroups.
+    char searched_group_14_a = NULL;
+    int searched_subgroup_14_a = NULL;
+
+    for (auto group = data_12->structure_.begin(); group != data_12->structure_.end(); ++group)
+    {
+        if (group->second->size() > 1) continue;
+
+        for (auto subgroup = group->second->begin(); subgroup != group->second->end(); ++subgroup)
+        {
+            if (subgroup->second->empty()) continue;
+
+            searched_group_14_a = group->first;
+            searched_subgroup_14_a = subgroup->first;
+
+            break;
+        }
+
+        if (searched_group_14_a != NULL && searched_subgroup_14_a != NULL)
+            break;
+    }
+
+    if (searched_group_14_a == NULL || searched_subgroup_14_a == NULL)
+    {
+        std::cout << error_log_prefix << "Either searched_group_14_a or searched_subgroup_14_a or is NULL!" << std::endl;
+        std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
+        std::cout << error_log_prefix << "14.a will be skipped!" << std::endl;
+    }
+    else
+    {
+        std::cout << test_log_prefix << "Selected group: " << searched_group_14_a << std::endl;
+        std::cout << test_log_prefix << "Selected subgroup: " << searched_subgroup_14_a << std::endl;
+
+        if (data_12->RemoveSubgroup(searched_group_14_a, searched_subgroup_14_a))
+            std::cout << test_log_prefix << "The selected subgroup was removed successfully." << std::endl;
+        else
+            std::cout << test_log_prefix << "Could not remove the selected subgroup." << std::endl;
+    }
+
+	
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[14.b] After removing the group disappears." << std::endl;
+
+    // A group with == 1 subgroups.
+    char searched_group_14_b = NULL;
+    int searched_subgroup_14_b = NULL;
+
+    for (auto group = data_12->structure_.begin(); group != data_12->structure_.end(); ++group)
+    {
+        if (group->second->size() != 1) continue;
+
+        for (auto subgroup = group->second->begin(); subgroup != group->second->end(); ++subgroup)
+        {
+            if (subgroup->second->empty()) continue;
+
+            searched_group_14_b = group->first;
+            searched_subgroup_14_b = subgroup->first;
+
+            break;
+        }
+
+        if (searched_group_14_b != NULL && searched_subgroup_14_b != NULL)
+            break;
+    }
+
+    if (searched_group_14_b == NULL || searched_subgroup_14_b == NULL)
+    {
+        std::cout << error_log_prefix << "Either searched_group_14_b or searched_subgroup_14_b or is NULL!" << std::endl;
+        std::cout << error_log_prefix << "It could be the structure is too small or is corrupted." << std::endl;
+        std::cout << error_log_prefix << "14.b will be skipped!" << std::endl;
+    }
+    else
+    {
+        std::cout << test_log_prefix << "Selected group: " << searched_group_14_b << std::endl;
+        std::cout << test_log_prefix << "Selected subgroup: " << searched_subgroup_14_b << std::endl;
+
+        if (data_12->RemoveSubgroup(searched_group_14_b, searched_subgroup_14_b))
+            std::cout << test_log_prefix << "The selected subgroup was removed successfully." << std::endl;
+        else
+            std::cout << test_log_prefix << "Could not remove the selected subgroup." << std::endl;
+    }
+
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[14.c] This subgroup does not exist." << std::endl;
+
+	// It 100% does not exist.
+    char selected_group_14_c = 'Z';
+    int selected_subgroup_14_c = 99;
+	
+    std::cout << test_log_prefix << "Selected group: " << selected_group_14_c << std::endl;
+    std::cout << test_log_prefix << "Selected subgroup: " << selected_subgroup_14_c << std::endl;
+
+    if (data_12->RemoveSubgroup(selected_group_14_c, selected_subgroup_14_c))
+        std::cout << test_log_prefix << "The selected subgroup was removed successfully." << std::endl;
+    else
+        std::cout << test_log_prefix << "Could not remove the selected subgroup." << std::endl;
+	
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[14.d] Apply method PrintAll() to check the results." << std::endl;
+
+    data_12->PrintAll();
+
+
+    // --- // --- // --- //
+
+
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << task_log_prefix << "[15.] ApplyMethod RemoveGroup() so that:" << std::endl;
+    std::cout << std::endl;
+
+    std::cout << task_log_prefix << "[15.a] The group was an existing one." << std::endl;
+
+	// Just grap the first available group.
+    char selected_group_15_a = data_12->structure_.begin()->first;
+
+    std::cout << test_log_prefix << "Selected group: " << selected_group_15_a << std::endl;
+
+    if (data_12->RemoveGroup(selected_group_15_a))
+        std::cout << test_log_prefix << "The selected group was removed successfully." << std::endl;
+    else
+        std::cout << test_log_prefix << "Could not remove the selected group." << std::endl;
 
 
 	
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[15.b] The group does not exist." << std::endl;
+
+    // Group key cannot be an upper case char, therefore it 100% does not exist.
+    char selected_group_15_b = 'X';
+
+    std::cout << test_log_prefix << "Selected group: " << selected_group_15_b << std::endl;
+
+    if (data_12->RemoveGroup(selected_group_15_b))
+        std::cout << test_log_prefix << "The selected group was removed successfully." << std::endl;
+    else
+        std::cout << test_log_prefix << "Could not remove the selected group." << std::endl;
+
+
+    std::cout << std::endl;
+    std::cout << task_log_prefix << "[15.c] Apply method PrintAll() to check the results." << std::endl;
+
+    data_12->PrintAll();
+	
+    // --- // --- // --- //
+
 	
 	// Footer
     std::cout << std::endl << std::endl << std::endl;
